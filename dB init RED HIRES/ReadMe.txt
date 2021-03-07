@@ -1,0 +1,1 @@
+psql -U postgres -d red_hires -f E:/red_hires.init.sql
