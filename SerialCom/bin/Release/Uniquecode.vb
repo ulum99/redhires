@@ -1,0 +1,79 @@
+﻿Imports Npgsql
+Imports System.ComponentModel
+
+Public Class Uniquecode
+	Dim appPath As String = (Application.StartupPath) & "\propertise.txt"
+	Dim sm As New SettingManager(appPath)
+	Dim conn_1 As New Npgsql.NpgsqlConnection
+	Dim strcon As String
+	Dim dbhost As String = sm.GetSetting("host")
+	Dim dbport As String = sm.GetSetting("dbport")
+	Dim dbuser As String = sm.GetSetting("dbuser")
+	Dim dbpass As String = sm.GetSetting("dbpass")
+	Dim dbname As String = sm.GetSetting("dbname")
+
+	Dim argumentOfworker As String
+
+	Public WithEvents bgw As BackgroundWorker
+
+	Public Property bfsize As String
+
+	Public Sub New(ByVal buffersize As String)
+		bfsize = buffersize
+		'Db_connect()
+	End Sub
+
+	Protected Overrides Sub Finalize()
+		Db_close()
+	End Sub
+
+	Public Function Count() As Integer
+		Dim script As String = "Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL"
+		Return Db_sCount(script)
+	End Function
+
+	Public Function SelectUniquecode()
+		Dim script As String = "SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL ORDER BY ID asc"
+		Dim result As String() = Db_select(script)
+		Return result
+	End Function
+
+	Public Function SelectUniquecodeId() As String()
+		Dim script As String = "SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL ORDER BY id asc"
+		Dim id As String() = Db_selectid(script)
+		Return id
+	End Function
+
+	Public Function UpdateBuffer(ByVal qty As String)
+		Dim script As String = "With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL Order by id asc LIMIT " & qty & " for update) Update uniquecode u set buffered=now() From identifier where identifier.id = u.id"
+		Db_update(script)
+		Return True
+	End Function
+
+	Public Function UpdatePrinted(ByVal idmin As String, ByVal idmax As String)
+		Dim script As String = "UPDATE uniqucode SET printed = now() WHERE buffered IS NOT NULL and id between " & idmin & " AND " & idmax
+		Db_update(script)
+		Return True
+	End Function
+	Public Function UpdatePrintedById(ByVal id As String)
+		Dim script As String = "UPDATE uniquecode SET printed = now() WHERE buffered IS NOT NULL and id = " & id
+		Db_update(script)
+		Return True
+	End Function
+	Public Function UpdatePrintedByCode(ByVal uniquecode As String)
+		Dim script As String = "UPDATE uniquecode SET printed = now() WHERE buffered IS NOT NULL and uniquecode = '" & uniquecode & "'"
+		Db_update(script)
+		Return True
+	End Function
+	'Public Function import(ByVal nameFile As String, ByVal directory As String)
+	'Dim script As String = "COPY uniquecode(uniquecode,received) FROM " & directory & "with delimeter ',' CSV header HEADER ENCODEING 'UTF8'"
+
+	'End Function
+
+	Public Function Import2(ByVal kode As String, ByVal received As String)
+		Dim script As String = "INSERT INTO uniquecode(uniquecode,received) VALUES ('" & kode & "','" & received & "')"
+		Db_insert(script)
+		Return True
+	End Function
+
+End Class

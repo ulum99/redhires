@@ -1,0 +1,13 @@
+A=Serial Setting
+Port=COM1
+Baudrate=1152000
+Databits=8
+Parity=NONE
+Stopbits=1
+Flowcontrol=NONE
+B=DBSetting
+host=127.0.0.1
+dbport=5432
+dbname=red_hires
+dbuser=postgres
+dbpass=kodokngorek

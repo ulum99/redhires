@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="SerialCom.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup>
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+    <userSettings>
+        <SerialCom.My.MySettings>
+            <setting name="ConnectionStatus" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="CmbPort" serializeAs="Xml">
+                <value>
+                    <ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <string>COM1</string>
+                    </ArrayOfString>
+                </value>
+            </setting>
+            <setting name="CmbPortLastSelect" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="CmbBaudrateLastSelect" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="CmbStopBitsLastSelect" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="CmbDataBitsLastSelect" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="CmbParityLastSelect" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="CmbFlowControlLastSelect" serializeAs="String">
+                <value>0</value>
+            </setting>
+        </SerialCom.My.MySettings>
+    </userSettings>
+</configuration>
