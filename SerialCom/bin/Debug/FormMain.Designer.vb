@@ -181,7 +181,7 @@ Partial Class FormMain
         '
         Me.ButtonEndBatch.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonEndBatch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEndBatch.Location = New System.Drawing.Point(21, 157)
+        Me.ButtonEndBatch.Location = New System.Drawing.Point(22, 120)
         Me.ButtonEndBatch.Name = "ButtonEndBatch"
         Me.ButtonEndBatch.Size = New System.Drawing.Size(472, 35)
         Me.ButtonEndBatch.TabIndex = 17
@@ -569,6 +569,7 @@ Partial Class FormMain
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBoxConnect)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False

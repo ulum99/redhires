@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>C:\Users\Ulum\Desktop\SerialCOm Final\Only EXE\|C:\Users\Ulum\Desktop\SerialCOm Final\|C:\Users\Ulum\Desktop\test\|E:\ULUM\Test exe\|publish\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\Ulum\Desktop\SerialCOm Final\|C:\Users\Ulum\Desktop\SerialCOm Final\Only EXE\|C:\Users\Ulum\Desktop\test\|E:\ULUM\Test exe\|publish\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>https://fekusa.com/autoupdate/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>

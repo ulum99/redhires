@@ -340,3 +340,16 @@
 2021-03-08 02:44:43,073 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 6
 2021-03-08 02:44:45,181 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 0
 2021-03-08 02:44:46,081 [7] INFO - [SerialCom] Send To Printer : 0,JTSP,\r\n
+2021-03-08 10:21:08,762 [1] ERROR- [SerialCom] autoupdate: Access to the path 'E:\ULUM\netProject\redhires\SerialCom\bin\Debug\serialcom.exe' is denied.
+2021-03-08 10:21:34,614 [1] ERROR- [SerialCom] autoupdate: Access to the path 'E:\ULUM\netProject\redhires\SerialCom\bin\Debug\serialcom.exe' is denied.
+2021-03-08 10:22:29,106 [1] ERROR- [SerialCom] autoupdate: Access to the path 'E:\ULUM\netProject\redhires\SerialCom\bin\Debug\serialcom.exe' is denied.
+2021-03-08 10:24:27,888 [1] ERROR- [SerialCom] autoupdate: The remote server returned an error: (404) Not Found.
+2021-03-08 10:27:33,189 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
+2021-03-08 10:29:53,021 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
+2021-03-08 10:30:20,120 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
+2021-03-08 10:33:35,801 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
+2021-03-08 10:40:29,551 [1] ERROR- [SerialCom] FormMain_Load() - An exception occurred during a WebClient request.
+2021-03-08 10:46:34,982 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
+2021-03-08 10:51:02,802 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
+2021-03-08 10:54:08,232 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
+2021-03-08 10:54:15,892 [1] ERROR- [SerialCom] autoupdate: An exception occurred during a WebClient request.
