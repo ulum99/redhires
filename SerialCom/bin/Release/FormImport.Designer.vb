@@ -55,6 +55,7 @@ Partial Class FormImport
         'Red_hiresDataSet
         '
         Me.Red_hiresDataSet.DataSetName = "red_hiresDataSet"
+        Me.Red_hiresDataSet.EnforceConstraints = False
         Me.Red_hiresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'UniquecodeTableAdapter

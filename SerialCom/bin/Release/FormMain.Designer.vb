@@ -73,16 +73,19 @@ Partial Class FormMain
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.GroupBoxConnect.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonSetting
         '
         Me.ButtonSetting.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSetting.Location = New System.Drawing.Point(297, 3)
+        Me.ButtonSetting.Location = New System.Drawing.Point(12, 27)
         Me.ButtonSetting.Name = "ButtonSetting"
         Me.ButtonSetting.Size = New System.Drawing.Size(117, 32)
         Me.ButtonSetting.TabIndex = 0
@@ -96,7 +99,7 @@ Partial Class FormMain
         Me.GroupBoxConnect.Controls.Add(Me.LabelPrinterPort)
         Me.GroupBoxConnect.Controls.Add(Me.ButtonConnect)
         Me.GroupBoxConnect.Controls.Add(Me.LabelComPort)
-        Me.GroupBoxConnect.Location = New System.Drawing.Point(12, 41)
+        Me.GroupBoxConnect.Location = New System.Drawing.Point(12, 59)
         Me.GroupBoxConnect.Name = "GroupBoxConnect"
         Me.GroupBoxConnect.Size = New System.Drawing.Size(523, 124)
         Me.GroupBoxConnect.TabIndex = 3
@@ -167,7 +170,7 @@ Partial Class FormMain
         Me.GroupBox2.Controls.Add(Me.TextBoxBatchNo)
         Me.GroupBox2.Controls.Add(Me.LabelQty)
         Me.GroupBox2.Controls.Add(Me.LabelBatch)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 167)
+        Me.GroupBox2.Location = New System.Drawing.Point(13, 185)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(523, 197)
         Me.GroupBox2.TabIndex = 4
@@ -178,9 +181,9 @@ Partial Class FormMain
         '
         Me.ButtonEndBatch.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonEndBatch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEndBatch.Location = New System.Drawing.Point(146, 141)
+        Me.ButtonEndBatch.Location = New System.Drawing.Point(22, 120)
         Me.ButtonEndBatch.Name = "ButtonEndBatch"
-        Me.ButtonEndBatch.Size = New System.Drawing.Size(159, 35)
+        Me.ButtonEndBatch.Size = New System.Drawing.Size(472, 35)
         Me.ButtonEndBatch.TabIndex = 17
         Me.ButtonEndBatch.Text = "End Batch"
         Me.ButtonEndBatch.UseVisualStyleBackColor = False
@@ -189,7 +192,7 @@ Partial Class FormMain
         '
         Me.LabelCounter.AutoSize = True
         Me.LabelCounter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCounter.Location = New System.Drawing.Point(152, 92)
+        Me.LabelCounter.Location = New System.Drawing.Point(148, 91)
         Me.LabelCounter.Name = "LabelCounter"
         Me.LabelCounter.Size = New System.Drawing.Size(19, 20)
         Me.LabelCounter.TabIndex = 16
@@ -199,7 +202,7 @@ Partial Class FormMain
         '
         Me.LabelCounterPrinted.AutoSize = True
         Me.LabelCounterPrinted.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCounterPrinted.Location = New System.Drawing.Point(17, 92)
+        Me.LabelCounterPrinted.Location = New System.Drawing.Point(21, 92)
         Me.LabelCounterPrinted.Name = "LabelCounterPrinted"
         Me.LabelCounterPrinted.Size = New System.Drawing.Size(73, 20)
         Me.LabelCounterPrinted.TabIndex = 15
@@ -209,9 +212,9 @@ Partial Class FormMain
         '
         Me.ButtonStartBatch.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonStartBatch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonStartBatch.Location = New System.Drawing.Point(334, 141)
+        Me.ButtonStartBatch.Location = New System.Drawing.Point(21, 119)
         Me.ButtonStartBatch.Name = "ButtonStartBatch"
-        Me.ButtonStartBatch.Size = New System.Drawing.Size(159, 35)
+        Me.ButtonStartBatch.Size = New System.Drawing.Size(472, 35)
         Me.ButtonStartBatch.TabIndex = 7
         Me.ButtonStartBatch.Text = "Start Batch"
         Me.ButtonStartBatch.UseVisualStyleBackColor = False
@@ -271,7 +274,7 @@ Partial Class FormMain
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(759, 144)
+        Me.ComboBox1.Location = New System.Drawing.Point(1037, 144)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 14
@@ -280,7 +283,7 @@ Partial Class FormMain
         '
         Me.ComboBoxProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxProduct.FormattingEnabled = True
-        Me.ComboBoxProduct.Location = New System.Drawing.Point(584, 27)
+        Me.ComboBoxProduct.Location = New System.Drawing.Point(836, 27)
         Me.ComboBoxProduct.Name = "ComboBoxProduct"
         Me.ComboBoxProduct.Size = New System.Drawing.Size(347, 28)
         Me.ComboBoxProduct.TabIndex = 5
@@ -289,7 +292,7 @@ Partial Class FormMain
         '
         Me.LabelProductName.AutoSize = True
         Me.LabelProductName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelProductName.Location = New System.Drawing.Point(719, 375)
+        Me.LabelProductName.Location = New System.Drawing.Point(879, 393)
         Me.LabelProductName.Name = "LabelProductName"
         Me.LabelProductName.Size = New System.Drawing.Size(71, 20)
         Me.LabelProductName.TabIndex = 4
@@ -337,7 +340,7 @@ Partial Class FormMain
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(557, 121)
+        Me.TextBox1.Location = New System.Drawing.Point(835, 121)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(374, 19)
@@ -356,7 +359,7 @@ Partial Class FormMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(925, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(792, 24)
         Me.MenuStrip1.TabIndex = 11
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -377,7 +380,7 @@ Partial Class FormMain
         '
         Me.Import.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Import.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Import.Location = New System.Drawing.Point(419, 3)
+        Me.Import.Location = New System.Drawing.Point(135, 27)
         Me.Import.Name = "Import"
         Me.Import.Size = New System.Drawing.Size(118, 32)
         Me.Import.TabIndex = 12
@@ -386,7 +389,7 @@ Partial Class FormMain
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(564, 61)
+        Me.Button1.Location = New System.Drawing.Point(835, 61)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 32)
         Me.Button1.TabIndex = 13
@@ -395,14 +398,14 @@ Partial Class FormMain
         '
         'JumlahBuffer1
         '
-        Me.JumlahBuffer1.Location = New System.Drawing.Point(564, 167)
+        Me.JumlahBuffer1.Location = New System.Drawing.Point(842, 167)
         Me.JumlahBuffer1.Name = "JumlahBuffer1"
         Me.JumlahBuffer1.Size = New System.Drawing.Size(175, 20)
         Me.JumlahBuffer1.TabIndex = 14
         '
         'JumlahBuffer2
         '
-        Me.JumlahBuffer2.Location = New System.Drawing.Point(758, 167)
+        Me.JumlahBuffer2.Location = New System.Drawing.Point(1036, 167)
         Me.JumlahBuffer2.Name = "JumlahBuffer2"
         Me.JumlahBuffer2.Size = New System.Drawing.Size(175, 20)
         Me.JumlahBuffer2.TabIndex = 15
@@ -410,7 +413,7 @@ Partial Class FormMain
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(564, 204)
+        Me.ListBox1.Location = New System.Drawing.Point(835, 198)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(175, 160)
         Me.ListBox1.TabIndex = 16
@@ -422,14 +425,14 @@ Partial Class FormMain
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(758, 204)
+        Me.ListBox2.Location = New System.Drawing.Point(962, 204)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(175, 160)
         Me.ListBox2.TabIndex = 17
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(564, 145)
+        Me.TextBox2.Location = New System.Drawing.Point(842, 145)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(139, 20)
         Me.TextBox2.TabIndex = 18
@@ -440,21 +443,21 @@ Partial Class FormMain
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(759, 125)
+        Me.TextBox3.Location = New System.Drawing.Point(1037, 125)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 20)
         Me.TextBox3.TabIndex = 19
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(564, 368)
+        Me.TextBox4.Location = New System.Drawing.Point(835, 370)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(180, 20)
         Me.TextBox4.TabIndex = 20
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(796, 364)
+        Me.Button2.Location = New System.Drawing.Point(982, 372)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 21
@@ -467,14 +470,14 @@ Partial Class FormMain
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(646, 61)
+        Me.TextBox5.Location = New System.Drawing.Point(917, 61)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
         Me.TextBox5.TabIndex = 22
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(654, 87)
+        Me.TextBox6.Location = New System.Drawing.Point(1203, 87)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(100, 20)
         Me.TextBox6.TabIndex = 23
@@ -482,7 +485,7 @@ Partial Class FormMain
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(769, 61)
+        Me.CheckBox1.Location = New System.Drawing.Point(1040, 61)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(41, 17)
         Me.CheckBox1.TabIndex = 24
@@ -492,7 +495,7 @@ Partial Class FormMain
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(769, 77)
+        Me.CheckBox2.Location = New System.Drawing.Point(1040, 77)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(38, 17)
         Me.CheckBox2.TabIndex = 25
@@ -502,21 +505,44 @@ Partial Class FormMain
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(769, 98)
+        Me.CheckBox3.Location = New System.Drawing.Point(1040, 98)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(53, 17)
         Me.CheckBox3.TabIndex = 26
         Me.CheckBox3.Text = "CRLF"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox1.Location = New System.Drawing.Point(552, 73)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(228, 194)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 27
+        Me.PictureBox1.TabStop = False
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Enabled = False
+        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox7.Location = New System.Drawing.Point(552, 283)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(228, 20)
+        Me.TextBox7.TabIndex = 28
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(925, 373)
+        Me.ClientSize = New System.Drawing.Size(792, 386)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.CheckBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
@@ -543,11 +569,13 @@ Partial Class FormMain
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBoxConnect)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormMain"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "SerialCom"
         Me.GroupBoxConnect.ResumeLayout(False)
         Me.GroupBoxConnect.PerformLayout()
@@ -555,6 +583,7 @@ Partial Class FormMain
         Me.GroupBox2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -609,4 +638,6 @@ Partial Class FormMain
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TextBox7 As TextBox
 End Class

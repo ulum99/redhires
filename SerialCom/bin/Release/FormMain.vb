@@ -2,8 +2,9 @@
 Imports System.Threading
 Imports System.Threading.Tasks
 Imports System.IO
-
+Imports QRCoder
 Public Class FormMain
+    Public logger As log4net.ILog = log4net.LogManager.GetLogger("SerialCom")
     Public Shared FormConnectionStatusOpen As Boolean = True    'Variables to detect FormConnection whether open or closed, True if it is open and vice versa
     Dim AppClose As Boolean = True  'Variables to close the Application
     Dim thread1 As System.Threading.Thread
@@ -50,28 +51,33 @@ Public Class FormMain
     Dim Stock As Integer
 
     Dim firstRun As Boolean = False
+    Dim generateQR As New QRCodeGenerator
+
 
     Dim uniquecode As New Uniquecode(BufferSize)
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Me.CheckForIllegalCrossThreadCalls = False
-        Me.CenterToScreen()
-        LabelComPort.Text = sm.GetSetting("Port")
-        GroupBox2.Enabled = False
-        GroupBox2.Hide()
-        BackgroundWorker1.WorkerReportsProgress = True
-        LabelCounter.Hide()
-        LabelCounterPrinted.Hide()
-        ButtonEndBatch.Visible = False
-        Me.Width = 562
-        Me.Height = 205
-
-        LabelComPort.Text = sm.GetSetting("Port")
-        LabelBaudrate.Text = sm.GetSetting("Baudrate")
-        LabelDataBits.Text = sm.GetSetting("Databits")
-        LabelParity.Text = sm.GetSetting("Parity")
-        LabelStopBits.Text = sm.GetSetting("Stopbits")
-        LabelFlowControl.Text = sm.GetSetting("Flowcontrol")
+        Try
+            'Me.CheckForIllegalCrossThreadCalls = False
+            Me.CenterToScreen()
+            LabelComPort.Text = sm.GetSetting("Port")
+            GroupBox2.Enabled = False
+            GroupBox2.Hide()
+            BackgroundWorker1.WorkerReportsProgress = True
+            LabelCounter.Hide()
+            LabelCounterPrinted.Hide()
+            ButtonEndBatch.Visible = False
+            Me.Width = 562
+            Me.Height = 250
+            LabelComPort.Text = sm.GetSetting("Port")
+            LabelBaudrate.Text = sm.GetSetting("Baudrate")
+            LabelDataBits.Text = sm.GetSetting("Databits")
+            LabelParity.Text = sm.GetSetting("Parity")
+            LabelStopBits.Text = sm.GetSetting("Stopbits")
+            LabelFlowControl.Text = sm.GetSetting("Flowcontrol")
+        Catch ex As Exception
+            logger.Error("FormMain_Load() - " & ex.Message)
+        End Try
     End Sub
 
     Private Sub ButtonSetting_Click(sender As Object, e As EventArgs) Handles ButtonSetting.Click
@@ -80,6 +86,7 @@ Public Class FormMain
         Dim openform As New FormSetting
         openform.Show()
         Me.Close()
+        logger.Info("setting")
     End Sub
 
     Private Sub ButtonConnect_Click(sender As Object, e As EventArgs) Handles ButtonConnect.Click
@@ -91,60 +98,84 @@ Public Class FormMain
 
                 MsgBox("Connection successful", MsgBoxStyle.Information, "Information Message")
                 ButtonConnect.Text = "Disconnect"
+                LabelStatus.Text = "Status"
+                LabelStatus.Visible = True
+                ButtonConnect.Enabled = True
+                ButtonStartBatch.Visible = True
                 ButtonSetting.Enabled = False
                 TextBoxPrinterID.Enabled = False
                 GroupBox2.Enabled = True
                 GroupBox2.Show()
                 Dim stock As Integer = uniquecode.Count()
                 TextBoxQty.Text = Str(stock)
-                Me.Width = 562
-                Me.Height = 430
+                Me.Width = 808
+                Me.Height = 425
 
             Catch ex As Exception
+                logger.Error("ButtonConnect_Click() - " & ex.Message)
                 MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
             End Try
         ElseIf LabelComPort.Text = "COMXX" Then
             MsgBox("Port COM Not Ready", MsgBoxStyle.Critical, "Error Message")
+            logger.Error("ButtonConnect_Click() - " & "Port COM Not Ready")
         ElseIf TextBoxPrinterID.Text = "" Then
             MsgBox("Printer ID Not Empty", MsgBoxStyle.Critical, "Error Message")
+            logger.Error("ButtonConnect_Click() - " & "Printer ID Not Empty")
         Else
             ButtonConnect.Text = "Connect"
             ButtonSetting.Enabled = True
             SP_Close()
             MsgBox("Connection Disconnected", MsgBoxStyle.Information, "Information Message")
+            logger.Error("Printer Status :  - " & "Connection Disconnected")
+
         End If
 
     End Sub
 
     Private Sub ButtonStartBatch_Click(sender As Object, e As EventArgs) Handles ButtonStartBatch.Click
-        printerID = TextBoxPrinterID.Text
-        Stock = TextBoxQty.Text
-        If Stock > 0 Then
-            If ButtonStartBatch.Text = "Start Batch" Then
-                If (TextBoxBatchNo.Text <> "") And (TextBoxQty.Text <> "") Then
-                    BackgroundWorker1.RunWorkerAsync("ECHO")  'Run Worker, Sent ECHO
-                    ButtonStartBatch.Text = "Prepare To Print"
+        Try
+            printerID = TextBoxPrinterID.Text
+            Stock = TextBoxQty.Text
+            If Stock > 0 Then
+                If ButtonStartBatch.Text = "Start Batch" Then
+                    If (TextBoxBatchNo.Text <> "") And (TextBoxQty.Text <> "") Then
+                        BackgroundWorker1.RunWorkerAsync("ECHO")  'Run Worker, Sent ECHO
+                        ButtonStartBatch.Text = "Prepare To Print"
+                        ButtonConnect.Enabled = False
+                        ButtonStartBatch.Enabled = False
+                        LabelStatus.Text = "Prepare Print"
+                        LabelStatus.BackColor = Color.Yellow
+                    Else
+                        MsgBox("Please insert Bacth No", MsgBoxStyle.Critical, "Information Message")
+                    End If
+                ElseIf ButtonStartBatch.Text = "Ready Start Print" Then
+                    ButtonConnect.Enabled = False
+                    TimerCheckSerial.Enabled = True
+                    BackgroundWorker1.RunWorkerAsync("SMFM")
+                    ButtonEndBatch.Visible = False
                     ButtonStartBatch.Enabled = False
-                    LabelStatus.Text = "Prepare Print"
-                    LabelStatus.BackColor = Color.Yellow
-                Else
-                    MsgBox("Please insert Bacth No", MsgBoxStyle.Critical, "Information Message")
+                ElseIf ButtonStartBatch.Text = "Stop Print" Then
+                    Dim result As DialogResult = MsgBox("Are you sure, you want to STOP and END BATCH?", MsgBoxStyle.OkCancel, "Confirmation")
+                    If result = DialogResult.OK Then
+                        BackgroundWorker2.RunWorkerAsync("JTSP")
+                        ButtonStartBatch.Visible = False
+                        ButtonEndBatch.Visible = True
+                        'reset buffered
+                        uniquecode.ResetBuffer()
+                        'reset index
+                        indexUsedUniquecode = 0
+                    End If
+
                 End If
-            ElseIf ButtonStartBatch.Text = "Ready Start Print" Then
-                TimerCheckSerial.Enabled = True
-                BackgroundWorker1.RunWorkerAsync("SMFM")
-                ButtonEndBatch.Visible = False
-                ButtonStartBatch.Enabled = False
-            ElseIf ButtonStartBatch.Text = "Stop Print" Then
-                BackgroundWorker2.RunWorkerAsync("JTSP")
-                ButtonStartBatch.Enabled = False
             Else
-
+                MsgBox("Stock 0", MsgBoxStyle.Critical, "Information Message")
+                logger.Error("ButtonStartBatch_Click() - " & "Stock 0 Cant Start Batch")
             End If
-        Else
-            MsgBox("Stock 0", MsgBoxStyle.Critical, "Information Message")
-        End If
 
+
+        Catch ex As Exception
+            logger.Error("ButtonStartBatch_Click() - " & ex.Message)
+        End Try
     End Sub
 
     Private Sub TextBoxPrinterID_TextChanged(sender As Object, e As EventArgs) Handles TextBoxPrinterID.TextChanged
@@ -198,29 +229,35 @@ Public Class FormMain
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        argumentOfworker = e.Argument.ToString
-        If argumentOfworker = "ECHO" Then
-            e.Result = SP_ECHO(printerID)
-        ElseIf argumentOfworker = "PEEC" Then
-            e.Result = SP_PEEC(printerID)
-        ElseIf argumentOfworker = "UPDATE BUFFER" Then
-            e.Result = uniquecode.UpdateBuffer(BufferSize)
-        ElseIf argumentOfworker = "SELECT BUFFER" Then
-            e.Result = uniquecode.SelectUniquecode()
-        ElseIf argumentOfworker = "MSST" Then
-            e.Result = SP_MSST(printerID, StartMsg)
-            '  System.Threading.Thread.Sleep(1000)
-        ElseIf argumentOfworker = "SMFM" Then
-            e.Result = SP_SMFM(printerID, MsgNo, FieldNo, FieldFont, FieldBold,
+        Try
+            argumentOfworker = e.Argument.ToString
+            If argumentOfworker = "ECHO" Then
+                e.Result = SP_ECHO(printerID)
+            ElseIf argumentOfworker = "PEEC" Then
+                e.Result = SP_PEEC(printerID)
+            ElseIf argumentOfworker = "UPDATE BUFFER" Then
+                e.Result = uniquecode.UpdateBuffer(BufferSize)
+            ElseIf argumentOfworker = "SELECT BUFFER" Then
+                e.Result = uniquecode.SelectUniquecode()
+            ElseIf argumentOfworker = "MSST" Then
+                e.Result = SP_MSST(printerID, StartMsg)
+                '  System.Threading.Thread.Sleep(1000)
+            ElseIf argumentOfworker = "SMFM" Then
+
+                e.Result = SP_SMFM(printerID, MsgNo, FieldNo, FieldFont, FieldBold,
                                FieldSpace, FieldX, FieldY, FieldType, kodeunik(indexUsedUniquecode), StartMsg)
-        ElseIf argumentOfworker = "JTST" Then
-            e.Result = SP_JTST(printerID)
-        ElseIf argumentOfworker = "JTSP" Then
-            e.Result = SP_JTSP(printerID)
-        ElseIf argumentOfworker = "SMFM-ON-PRINT" Then
-            e.Result = SP_SMFM(printerID, MsgNo, FieldNo, FieldFont, FieldBold,
+            ElseIf argumentOfworker = "JTST" Then
+                e.Result = SP_JTST(printerID)
+            ElseIf argumentOfworker = "JTSP" Then
+                e.Result = SP_JTSP(printerID)
+            ElseIf argumentOfworker = "SMFM-ON-PRINT" Then
+                e.Result = SP_SMFM(printerID, MsgNo, FieldNo, FieldFont, FieldBold,
                                FieldSpace, FieldX, FieldY, FieldType, kodeunik(indexUsedUniquecode), StartMsg)
-        End If
+            End If
+            logger.Info("argumentOfworker : " & argumentOfworker & "-" & e.Result)
+        Catch ex As Exception
+            logger.Error("BackgroundWorker1_DoWork() - " & ex.Message)
+        End Try
 
     End Sub
 
@@ -266,7 +303,9 @@ Public Class FormMain
             LabelStatus.Text = "WAITING START"
             'proses menunggu startprint Klik
         ElseIf (argumentOfworker = "SMFM") And (serialResponse <> "FAIL") Then
+            TextBox7.Text = kodeunik(indexUsedUniquecode)
             indexUsedUniquecode += 1
+
             BackgroundWorker1.RunWorkerAsync("JTST")
         ElseIf (argumentOfworker = "JTST") And (serialResponse <> "FAIL") Then
             ButtonConnect.Enabled = False
@@ -280,9 +319,9 @@ Public Class FormMain
             LabelStatus.Text = "Running"
             LabelStatus.BackColor = Color.Green
         ElseIf argumentOfworker = "JTSP" And (serialResponse <> "FAIL") Then
-            ButtonConnect.Enabled = False
+            ' ButtonConnect.Enabled = False
             ButtonStartBatch.Enabled = True
-            ButtonStartBatch.BackColor = Color.Gray
+            ButtonStartBatch.BackColor = Color.AliceBlue
             ButtonStartBatch.Text = "Ready Start Print"
             LabelQty.Hide()
             TextBoxQty.Hide()
@@ -294,14 +333,17 @@ Public Class FormMain
             TimerCheckSerial.Enabled = False
 
         ElseIf (argumentOfworker = "SMFM-ON-PRINT") And (serialResponse <> "FAIL") Then
+            TextBox7.Text = kodeunik(indexUsedUniquecode)
             If (((CInt(BufferSize) - indexUsedUniquecode) < CInt(MinBuffer)) = True) Then
                 indexUsedUniquecode = 0
                 BackgroundWorker3.RunWorkerAsync("GET-BUFFER")
             End If
             indexUsedUniquecode += 1
+
         Else
-                MsgBox("Unhandle Response From Printer " & serialResponse & " " & argumentOfworker, MsgBoxStyle.Critical, "Error Message")
+            MsgBox("Unhandle Response From Printer " & serialResponse & " " & argumentOfworker, MsgBoxStyle.Critical, "Error Message")
         End If
+
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
@@ -316,7 +358,18 @@ Public Class FormMain
         GroupBox2.Visible = False
         ButtonConnect.Enabled = True
         Me.Width = 562
-        Me.Height = 205
+        Me.Height = 250
+        PictureBox1.Image = Nothing
+        TextBox7.Text = ""
+        LabelCounter.Text = "0"
+        LabelQty.Show()
+        TextBoxQty.Show()
+        LabelCounter.Hide()
+        LabelCounterPrinted.Hide()
+        LabelStatus.Text = ""
+        LabelStatus.BackColor = Color.Transparent
+        LabelStatus.Hide()
+        uniquecode.ResetBuffer()
     End Sub
 
     Private Sub BackgroundWorker3_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker3.DoWork
@@ -363,25 +416,31 @@ Public Class FormMain
     End Sub
 
     Private Sub BackgroundWorker2_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker2.DoWork
-        argumentOfworker2 = e.Argument.ToString
-        If argumentOfworker2 = "JTSP" Then
-            e.Result = SP_JTSP(printerID)
-        End If
+        Try
+            argumentOfworker2 = e.Argument.ToString
+            If argumentOfworker2 = "JTSP" Then
+                e.Result = SP_JTSP(printerID)
+            End If
+
+        Catch ex As Exception
+            LabelStatus.Text = "Error : Response From Printer "
+            logger.Error("Background Worker 2 : " & ex.Message)
+        End Try
     End Sub
 
     Private Sub BackgroundWorker2_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
         If argumentOfworker2 = "JTSP" And (serialResponse <> "FAIL") Then
-            ButtonConnect.Enabled = False
+            ' ButtonConnect.Enabled = False
             ButtonStartBatch.Enabled = True
-            ButtonStartBatch.BackColor = Color.Gray
-            ButtonStartBatch.Text = "Ready Start Print"
+            ButtonStartBatch.BackColor = Color.AliceBlue
+            '   ButtonStartBatch.Text = "Resume Print"
             LabelQty.Hide()
             TextBoxQty.Hide()
             LabelCounter.Show()
             LabelCounterPrinted.Show()
             LabelStatus.Text = "Stopped"
             LabelStatus.BackColor = Color.Red
-            ButtonEndBatch.Visible = True
+            ButtonEndBatch.Visible = False
             TimerCheckSerial.Enabled = False
         End If
     End Sub
@@ -401,15 +460,12 @@ Public Class FormMain
         TextBox6.Text = kirim
     End Sub
 
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
-
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox7.TextChanged
+        'PictureBox1.Image = Nothing
+        Dim data = generateQR.CreateQrCode(TextBox7.Text, QRCodeGenerator.ECCLevel.Q)
+        Dim code As New QRCode(data)
+        PictureBox1.Image = code.GetGraphic(6)
     End Sub
 
-    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
 
-    End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-
-    End Sub
 End Class

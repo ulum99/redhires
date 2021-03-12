@@ -67,6 +67,7 @@ Public Class FormMain
             LabelCounter.Hide()
             LabelCounterPrinted.Hide()
             ButtonEndBatch.Visible = False
+            Me.ControlBox = True
             Me.Width = 562
             Me.Height = 250
             LabelComPort.Text = sm.GetSetting("Port")
@@ -95,7 +96,9 @@ Public Class FormMain
                 SP_Open(LabelComPort.Text, LabelBaudrate.Text,
                         LabelDataBits.Text, LabelParity.Text,
                         LabelStopBits.Text, LabelFlowControl.Text)
-
+                Me.Width = 808
+                Me.Height = 425
+                Me.ControlBox = False
                 MsgBox("Connection successful", MsgBoxStyle.Information, "Information Message")
                 ButtonConnect.Text = "Disconnect"
                 LabelStatus.Text = "Status"
@@ -108,8 +111,7 @@ Public Class FormMain
                 GroupBox2.Show()
                 Dim stock As Integer = uniquecode.Count()
                 TextBoxQty.Text = Str(stock)
-                Me.Width = 808
-                Me.Height = 425
+
 
             Catch ex As Exception
                 logger.Error("ButtonConnect_Click() - " & ex.Message)
@@ -125,6 +127,9 @@ Public Class FormMain
             ButtonConnect.Text = "Connect"
             ButtonSetting.Enabled = True
             SP_Close()
+            Me.ControlBox = True
+            Me.Width = 562
+            Me.Height = 223
             MsgBox("Connection Disconnected", MsgBoxStyle.Information, "Information Message")
             logger.Error("Printer Status :  - " & "Connection Disconnected")
 
@@ -155,13 +160,17 @@ Public Class FormMain
                     ButtonEndBatch.Visible = False
                     ButtonStartBatch.Enabled = False
                 ElseIf ButtonStartBatch.Text = "Stop Print" Then
-                    BackgroundWorker2.RunWorkerAsync("JTSP")
-                    ButtonStartBatch.Visible = False
-                    ButtonEndBatch.Visible = True
-                    'reset buffered
-                    uniquecode.ResetBuffer()
-                    'reset index
-                    indexUsedUniquecode = 0
+                    Dim result As DialogResult = MsgBox("Are you sure, you want to STOP and END BATCH?", MsgBoxStyle.OkCancel, "Confirmation")
+                    If result = DialogResult.OK Then
+                        BackgroundWorker2.RunWorkerAsync("JTSP")
+                        ButtonStartBatch.Visible = False
+                        ButtonEndBatch.Visible = True
+                        'reset buffered
+                        uniquecode.ResetBuffer()
+                        'reset index
+                        indexUsedUniquecode = 0
+                    End If
+
                 End If
             Else
                 MsgBox("Stock 0", MsgBoxStyle.Critical, "Information Message")

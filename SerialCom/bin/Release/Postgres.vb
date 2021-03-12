@@ -2,6 +2,7 @@
 'Imports SettingManager
 
 Module Postgres
+    Public logger As log4net.ILog = log4net.LogManager.GetLogger("SerialCom")
     Dim appPath As String = (Application.StartupPath) & "\propertise.txt"
     Dim sm As New SettingManager(appPath)
 
@@ -30,111 +31,149 @@ Module Postgres
             conn_1.Open()
             Return True
         Catch ex As Exception
+            logger.Error("Db Connect : " & ex.Message)
             Return False
         End Try
     End Function
 
     Public Function Db_select(ByVal cmdScript As String)
-        Db_connect()
         Dim arr As String() = {}
         Dim id As String() = {}
-        cmd = New NpgsqlCommand With {
-            .CommandType = CommandType.Text,
-            .CommandText = cmdScript,
-            .Connection = conn_1
-        }
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = cmdScript
-        dr = cmd.ExecuteReader
-        If dr.HasRows Then
-            Do While dr.Read
-                arr.Add(dr("uniquecode"))
-                id.Add(dr("id"))
-            Loop
-        End If
-        Db_close()
+
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                Do While dr.Read
+                    arr.Add(dr("uniquecode"))
+                    id.Add(dr("id"))
+                Loop
+            End If
+            Db_close()
+            logger.Info("Db Select - " & cmdScript & " - " & String.Join(",", arr))
+        Catch ex As Exception
+            logger.Error("Db Select - " & ex.Message)
+        End Try
         Return arr
+
     End Function
 
     Public Function Db_selectid(ByVal cmdScript As String)
-        Db_connect()
-        'Dim arr As String() = {}
         Dim id As String() = {}
-        cmd = New NpgsqlCommand With {
-            .CommandType = CommandType.Text,
-            .CommandText = cmdScript,
-            .Connection = conn_1
-        }
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = cmdScript
-        dr2 = cmd.ExecuteReader
-        If dr2.HasRows Then
-            Do While dr2.Read
-                id.Add(dr2("id"))
-            Loop
-        End If
-        Db_close()
+
+        Try
+            Db_connect()
+            'Dim arr As String() = {}
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            dr2 = cmd.ExecuteReader
+            If dr2.HasRows Then
+                Do While dr2.Read
+                    id.Add(dr2("id"))
+                Loop
+            End If
+            Db_close()
+            logger.Info("Db Selectid - " & cmdScript & " - " & String.Join(",", id))
+        Catch ex As Exception
+            logger.Error("Db Selectid - " & ex.Message)
+        End Try
         Return (id)
 
     End Function
 
     Public Function Db_sCount(ByVal cmdScript As String) As Integer
-        Db_connect()
-        Dim result As Integer
-        cmd = New NpgsqlCommand With {
+        Dim result As Integer = 0
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
             .CommandType = CommandType.Text,
             .CommandText = cmdScript,
             .Connection = conn_1
         }
-        result = Int(cmd.ExecuteScalar)
-        Db_close()
+            result = Int(cmd.ExecuteScalar)
+            Db_close()
+            logger.Info("Dbs Count : " & " - " & cmdScript & " - " & result)
+
+        Catch ex As Exception
+            logger.Error("Db_sCount - " & ex.Message)
+
+        End Try
         Return result
+
     End Function
 
     Public Function Db_update(ByVal cmdScript As String) As Integer
-        Db_connect()
         Dim result As Integer
-        cmd = New NpgsqlCommand With {
-            .CommandType = CommandType.Text,
-            .CommandText = cmdScript,
-            .Connection = conn_1
-        }
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = cmdScript
-        result = cmd.ExecuteNonQuery
-        Db_close()
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            result = cmd.ExecuteNonQuery
+            logger.Info("Result Update - " & cmdScript & " - " & result)
+            Db_close()
+        Catch ex As Exception
+            logger.Error("Select Uniquecode - " & ex.Message)
+        End Try
+
         Return result
     End Function
 
     Public Function Db_insert(ByVal cmdScript As String) As Integer
-        Db_connect()
         Dim result As Integer
-        cmd = New NpgsqlCommand With {
-            .CommandType = CommandType.Text,
-            .CommandText = cmdScript,
-            .Connection = conn_1
-        }
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = cmdScript
-        result = cmd.ExecuteNonQuery
-        Db_close()
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            result = cmd.ExecuteNonQuery
+            logger.Info("Result Insert - " & cmdScript & " - " & result)
+            Db_close()
+        Catch ex As Exception
+            logger.Error("Insert  - " & ex.Message)
+        End Try
         Return result
 
     End Function
     Public Function Db_copy(ByVal cmdScript As String) As Integer
-        Db_connect()
         Dim result As Integer
-        cmd = New NpgsqlCommand With {
+
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
             .CommandType = CommandType.Text,
             .CommandText = cmdScript,
             .Connection = conn_1
         }
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = cmdScript
-        result = cmd.ExecuteNonQuery
-        Db_close()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            result = cmd.ExecuteNonQuery
+            Db_close()
+            logger.Info("Db_copy : " & result)
+        Catch ex As Exception
+            logger.Error("Db_copy : " & ex.Message)
+        End Try
         Return result
-
     End Function
 
     Public Function Db_delete(ByVal cmdScript As String) As Integer
@@ -158,6 +197,7 @@ Module Postgres
             conn_1.Close()
             Return True
         Catch ex As Exception
+            logger.Error("DBClose : " & ex.Message)
             Return False
         End Try
 

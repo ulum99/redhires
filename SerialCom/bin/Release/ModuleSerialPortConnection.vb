@@ -34,10 +34,14 @@ Module ModuleSerialPortConnection
         ElseIf FlowControl Is "XON/XOFF" Then
             SP.Handshake = IO.Ports.Handshake.XOnXOff
         End If
-
-        SP.Open()
-        SP.DtrEnable = True
-        SP.Write("\r\n" & vbCrLf)
+        Try
+            SP.Open()
+            SP.DtrEnable = True
+            SP.Write("\r\n" & vbCrLf)
+            logger.Info("Port : " & Port & "|" & "Data Bits : " & DataBits & "|" & "Parity : " & Parity & "|" & "StopBits : " & StopBits & "|" & "Flow Control : " & FlowControl)
+        Catch ex As Exception
+            logger.Error("SP Open : " & ex.Message)
+        End Try
     End Sub
 
     'Close Serial Communication
@@ -48,13 +52,21 @@ Module ModuleSerialPortConnection
     'Receive Data Serial Communication
     Public Function SP_Read()
         Dim Result As String = ""
-        Result = SP.ReadExisting
+        Try
+            Result = SP.ReadExisting
+        Catch ex As Exception
+            logger.Error("SP Read (ERROR) : " & ex.Message)
+        End Try
         Return Result
     End Function
 
     'Send Data 
     Public Function SP_Write(ByVal Str As String)
-        SP.WriteLine(Str)
+        Try
+            SP.WriteLine(Str)
+        Catch ex As Exception
+            logger.Error("SP Write : " & ex.Message)
+        End Try
         Return Str
     End Function
 
@@ -77,8 +89,11 @@ Module ModuleSerialPortConnection
             Else
                 Return "FAIL"
             End If
+            logger.Info("Send To Printer : " & PrinterID & command & endcmd & " | Response : " & response)
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Error("SP_ECHO : " & ex.Message)
             Return "FAIL"
         End Try
     End Function
@@ -92,9 +107,11 @@ Module ModuleSerialPortConnection
             'dataIn = Str(SP.BytesToRead)
             'End While
             response = response.Replace("\r", "").Replace("\n", "").Replace(vbCr, "").Replace(vbLf, "").Replace(vbCrLf, "")
+            logger.Info("Send To Printer : " & text & " | Response : " & response)
             Return response
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Error("SP SEND : " & ex.Message)
             Return "FAIL"
         End Try
     End Function
@@ -115,13 +132,17 @@ Module ModuleSerialPortConnection
 
             response = SP_Read()
             response = response.Replace("\r", "").Replace("\n", "").Replace(vbCr, "").Replace(vbLf, "").Replace(vbCrLf, "")
+            logger.Info("Send To Printer : " & PrinterID & command & " | Response : " & response)
+
             If response = PrinterID & ",PEEC,1," Then
                 Return response
             Else
                 Return response
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Error("SP PEEC : " & ex.Message)
             Return "FAIL"
         End Try
     End Function
@@ -168,6 +189,8 @@ Module ModuleSerialPortConnection
             End While
             response = SP.ReadExisting
             response = response.Replace("\r", "").Replace("\n", "").Replace(vbCr, "").Replace(vbLf, "")
+            logger.Info("Send To Printer : " & cmd & " | Response : " & response)
+
             If response = PrinterID & ",FDOK" Then
                 Return response
             Else
@@ -175,6 +198,7 @@ Module ModuleSerialPortConnection
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Error("SP SMFM : " & ex.Message)
             Return "FAIL"
         End Try
     End Function
@@ -188,7 +212,7 @@ Module ModuleSerialPortConnection
         Dim response As String = ""
         Dim command As String = "SMFM"
         Dim endCmd As String = "\r\n"
-        Dim cmd As String
+        Dim cmd As String = ""
         Dim Msg As String() = fContent
 
         Dim lMsgNo As Integer = MsgNo.Length
@@ -227,10 +251,13 @@ Module ModuleSerialPortConnection
                 'Return "FDOK"
                 'End If
             Next
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Error("SP SMFM FIRST : " & ex.Message)
             Return "FAIL"
         End Try
+        logger.Info("Send To Printer : " & cmd & " | Response : " & response)
         Return response
     End Function
 
@@ -249,6 +276,7 @@ Module ModuleSerialPortConnection
             End While
             response = SP_Read()
             response = response.Replace("\r", "").Replace("\n", "").Replace(vbCr, "").Replace(vbLf, "")
+            logger.Info("Send To Printer : " & PrinterID & command & " | Response : " & response)
             If response = PrinterID & ",OK" Then
                 Return response
             Else
@@ -256,6 +284,7 @@ Module ModuleSerialPortConnection
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Error("SP MSST : " & ex.Message)
             Return "FAIL"
         End Try
     End Function
@@ -270,9 +299,12 @@ Module ModuleSerialPortConnection
             SP_Write(PrinterID & command & endCmd)
             'delay 3 detik
             System.Threading.Thread.Sleep(3000)
+            logger.Info("Send To Printer : " & PrinterID & command)
+
             Return "OK"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Info("SP JTST : " & ex.Message)
             Return "FAIL"
         End Try
     End Function
@@ -286,9 +318,11 @@ Module ModuleSerialPortConnection
             SP_Write(PrinterID & command & endCmd)
             'delay 3 detik
             System.Threading.Thread.Sleep(3000)
+            logger.Info("Send To Printer : " & PrinterID & command)
             Return "OK"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message")
+            logger.Error("SP JTSP : " & ex.Message)
             Return "FAIL"
         End Try
     End Function
@@ -311,6 +345,7 @@ Module ModuleSerialPortConnection
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Message Serial")
+            logger.Error("SP WAIT PRINTED : " & ex.Message)
             Return "FAIL"
         End Try
     End Function

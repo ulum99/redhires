@@ -538,7 +538,6 @@ Partial Class FormMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(792, 386)
-        Me.ControlBox = False
         Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.CheckBox2)
