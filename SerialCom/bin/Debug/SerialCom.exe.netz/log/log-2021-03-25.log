@@ -1,0 +1,24 @@
+2021-03-25 15:34:46,382 [5] INFO - [SerialCom] Running Check Update
+2021-03-25 15:34:46,427 [5] INFO - [SerialCom] Current Version: 1.9
+2021-03-25 15:34:46,443 [5] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-25 15:34:46,458 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-25 15:51:56,405 [4] INFO - [SerialCom] Running Check Update
+2021-03-25 15:51:56,444 [4] INFO - [SerialCom] Current Version: 1.9
+2021-03-25 15:51:56,465 [4] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-25 15:51:56,486 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-25 15:56:00,007 [4] INFO - [SerialCom] Running Check Update
+2021-03-25 15:56:00,052 [4] INFO - [SerialCom] Current Version: 1.9
+2021-03-25 15:56:00,071 [4] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-25 15:56:00,099 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-25 17:31:02,797 [4] INFO - [SerialCom] Running Check Update
+2021-03-25 17:31:02,859 [4] INFO - [SerialCom] Current Version: 1.9
+2021-03-25 17:31:02,881 [4] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-25 17:31:02,901 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-25 17:32:09,235 [4] INFO - [SerialCom] Running Check Update
+2021-03-25 17:32:09,259 [4] INFO - [SerialCom] Current Version: 1.9
+2021-03-25 17:32:09,277 [4] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-25 17:32:09,292 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-25 17:37:27,007 [4] INFO - [SerialCom] Running Check Update
+2021-03-25 17:37:27,036 [4] INFO - [SerialCom] Current Version: 1.9
+2021-03-25 17:37:27,054 [4] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-25 17:37:27,065 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9

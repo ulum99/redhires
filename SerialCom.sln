@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SerialCom", "SerialCom\SerialCom.vbproj", "{CA241219-1BC2-45EC-8E35-A26129F15037}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RedhiresSetup", "RedhiresSetup\RedhiresSetup.vdproj", "{E66A0D03-8159-43B7-8A57-45999F8FCCA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,8 +15,10 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CA241219-1BC2-45EC-8E35-A26129F15037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA241219-1BC2-45EC-8E35-A26129F15037}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA241219-1BC2-45EC-8E35-A26129F15037}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA241219-1BC2-45EC-8E35-A26129F15037}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CA241219-1BC2-45EC-8E35-A26129F15037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA241219-1BC2-45EC-8E35-A26129F15037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E66A0D03-8159-43B7-8A57-45999F8FCCA9}.Debug|Any CPU.ActiveCfg = Debug
+		{E66A0D03-8159-43B7-8A57-45999F8FCCA9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

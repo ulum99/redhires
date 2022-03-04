@@ -29,9 +29,10 @@ Module Postgres
         conn_1.ConnectionString = strcon
         Try
             conn_1.Open()
+            logger.Info("Db Connect : " & "success" & "dbname = " & dbname & "pass=" & dbpass)
             Return True
         Catch ex As Exception
-            logger.Error("Db Connect : " & ex.Message)
+            logger.Error("Db Connect : " & ex.Message & "dbname = " & dbname & "pass=" & dbpass)
             Return False
         End Try
     End Function
@@ -65,6 +66,101 @@ Module Postgres
 
     End Function
 
+    Public Function Db_select2(ByVal cmdScript As String)
+        Dim arr As String() = {}
+        Dim arr2 As String() = {}
+        Dim id As String() = {}
+
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                Do While dr.Read
+                    arr.Add(dr("uniquecode"))
+                    id.Add(dr("id"))
+                    arr2.Add(dr("uniquecode2"))
+                Loop
+            End If
+            Db_close()
+            logger.Info("Db Select2 - " & cmdScript & " - " & String.Join(",", arr2))
+        Catch ex As Exception
+            logger.Error("Db Select2 - " & ex.Message)
+        End Try
+        Return arr2
+
+    End Function
+
+    Public Function Db_select3(ByVal cmdScript As String)
+        Dim arr As String() = {}
+        Dim arr2 As String() = {}
+        Dim arr3 As String() = {}
+        Dim id As String() = {}
+
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                Do While dr.Read
+                    arr.Add(dr("uniquecode"))
+                    id.Add(dr("id"))
+                    arr2.Add(dr("uniquecode2"))
+                    arr3.Add(dr("MaterialCode"))
+                Loop
+            End If
+            Db_close()
+            logger.Info("Db Select3 - " & cmdScript & " - " & String.Join(",", arr2))
+        Catch ex As Exception
+            logger.Error("Db Select3 - " & ex.Message)
+        End Try
+        Return arr3
+
+    End Function
+
+    Public Function Db_selectprinted(ByVal cmdScript As String)
+        Dim arr As String() = {}
+        Dim printed As String() = {}
+        Dim dsPrinted As New DataSet()
+
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            dr = cmd.ExecuteReader
+
+
+            dsPrinted.Tables.Add("printed")
+            dsPrinted.Tables(0).Load(dr)
+
+            Db_close()
+            'logger.Debug("Hasil")
+            Return dsPrinted
+        Catch ex As Exception
+            logger.Error("Db Select - " & ex.Message)
+            Return Nothing
+        End Try
+
+
+    End Function
+
     Public Function Db_selectid(ByVal cmdScript As String)
         Dim id As String() = {}
 
@@ -90,6 +186,34 @@ Module Postgres
             logger.Error("Db Selectid - " & ex.Message)
         End Try
         Return (id)
+
+    End Function
+
+    Public Function Db_selectProduct(ByVal cmdScript As String)
+        Dim arr As String() = {}
+        Dim id As String() = {}
+
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                Do While dr.Read
+                    arr.Add(dr("id") & "-" & dr("codekey") & "-" & dr("name"))
+                Loop
+            End If
+            Db_close()
+            logger.Info("Db Select product- " & cmdScript & " - " & String.Join(",", arr))
+        Catch ex As Exception
+            logger.Error("Db Select product- " & ex.Message)
+        End Try
+        Return arr
 
     End Function
 
@@ -129,7 +253,7 @@ Module Postgres
             logger.Info("Result Update - " & cmdScript & " - " & result)
             Db_close()
         Catch ex As Exception
-            logger.Error("Select Uniquecode - " & ex.Message)
+            logger.Error("Update Uniquecode - " & ex.Message)
         End Try
 
         Return result
@@ -155,6 +279,28 @@ Module Postgres
         Return result
 
     End Function
+
+    Public Function Db_insertreturnid(ByVal cmdScript As String) As Integer
+        Dim result As Integer
+        Try
+            Db_connect()
+            cmd = New NpgsqlCommand With {
+                .CommandType = CommandType.Text,
+                .CommandText = cmdScript,
+                .Connection = conn_1
+            }
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = cmdScript
+            result = cmd.ExecuteScalar
+            logger.Info("Result insert return id - " & cmdScript & " - " & result)
+            Db_close()
+        Catch ex As Exception
+            logger.Error("Insert  - " & ex.Message)
+        End Try
+        Return result
+
+    End Function
+
     Public Function Db_copy(ByVal cmdScript As String) As Integer
         Dim result As Integer
 

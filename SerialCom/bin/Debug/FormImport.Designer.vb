@@ -26,13 +26,15 @@ Partial Class FormImport
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormImport))
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.ButtonOpenFile = New System.Windows.Forms.Button()
-        Me.UniquecodeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Red_hiresDataSet = New SerialCom.red_hiresDataSet()
-        Me.UniquecodeTableAdapter = New SerialCom.red_hiresDataSetTableAdapters.uniquecodeTableAdapter()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.ButtonImport = New System.Windows.Forms.Button()
         Me.ButtonCancel = New System.Windows.Forms.Button()
+        Me.UniquecodeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Red_hiresDataSet = New SerialCom.red_hiresDataSet()
+        Me.UniquecodeTableAdapter = New SerialCom.red_hiresDataSetTableAdapters.uniquecodeTableAdapter()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.ListBox4 = New System.Windows.Forms.ListBox()
         CType(Me.UniquecodeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Red_hiresDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,12 +42,51 @@ Partial Class FormImport
         'ButtonOpenFile
         '
         Me.ButtonOpenFile.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOpenFile.Location = New System.Drawing.Point(31, 12)
+        Me.ButtonOpenFile.Location = New System.Drawing.Point(12, 12)
         Me.ButtonOpenFile.Name = "ButtonOpenFile"
         Me.ButtonOpenFile.Size = New System.Drawing.Size(111, 32)
         Me.ButtonOpenFile.TabIndex = 0
         Me.ButtonOpenFile.Text = "Open File"
         Me.ButtonOpenFile.UseVisualStyleBackColor = True
+        '
+        'ListBox1
+        '
+        Me.ListBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(12, 50)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(193, 108)
+        Me.ListBox1.TabIndex = 3
+        '
+        'ListBox2
+        '
+        Me.ListBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(211, 50)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(233, 108)
+        Me.ListBox2.TabIndex = 4
+        '
+        'ButtonImport
+        '
+        Me.ButtonImport.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonImport.Location = New System.Drawing.Point(522, 192)
+        Me.ButtonImport.Name = "ButtonImport"
+        Me.ButtonImport.Size = New System.Drawing.Size(97, 35)
+        Me.ButtonImport.TabIndex = 5
+        Me.ButtonImport.Text = "Import"
+        Me.ButtonImport.UseVisualStyleBackColor = True
+        '
+        'ButtonCancel
+        '
+        Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCancel.Location = New System.Drawing.Point(289, 192)
+        Me.ButtonCancel.Name = "ButtonCancel"
+        Me.ButtonCancel.Size = New System.Drawing.Size(97, 35)
+        Me.ButtonCancel.TabIndex = 6
+        Me.ButtonCancel.Text = "Cancel"
+        Me.ButtonCancel.UseVisualStyleBackColor = True
         '
         'UniquecodeBindingSource
         '
@@ -62,44 +103,23 @@ Partial Class FormImport
         '
         Me.UniquecodeTableAdapter.ClearBeforeFill = True
         '
-        'ListBox1
+        'ListBox3
         '
-        Me.ListBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(31, 50)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(193, 108)
-        Me.ListBox1.TabIndex = 3
+        Me.ListBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(450, 50)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(233, 108)
+        Me.ListBox3.TabIndex = 7
         '
-        'ListBox2
+        'ListBox4
         '
-        Me.ListBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(241, 50)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(233, 108)
-        Me.ListBox2.TabIndex = 4
-        '
-        'ButtonImport
-        '
-        Me.ButtonImport.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonImport.Location = New System.Drawing.Point(377, 192)
-        Me.ButtonImport.Name = "ButtonImport"
-        Me.ButtonImport.Size = New System.Drawing.Size(97, 35)
-        Me.ButtonImport.TabIndex = 5
-        Me.ButtonImport.Text = "Import"
-        Me.ButtonImport.UseVisualStyleBackColor = True
-        '
-        'ButtonCancel
-        '
-        Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCancel.Location = New System.Drawing.Point(241, 192)
-        Me.ButtonCancel.Name = "ButtonCancel"
-        Me.ButtonCancel.Size = New System.Drawing.Size(97, 35)
-        Me.ButtonCancel.TabIndex = 6
-        Me.ButtonCancel.Text = "Cancel"
-        Me.ButtonCancel.UseVisualStyleBackColor = True
+        Me.ListBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ListBox4.FormattingEnabled = True
+        Me.ListBox4.Location = New System.Drawing.Point(689, 50)
+        Me.ListBox4.Name = "ListBox4"
+        Me.ListBox4.Size = New System.Drawing.Size(233, 108)
+        Me.ListBox4.TabIndex = 8
         '
         'FormImport
         '
@@ -107,8 +127,10 @@ Partial Class FormImport
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.CancelButton = Me.ButtonCancel
-        Me.ClientSize = New System.Drawing.Size(501, 248)
+        Me.ClientSize = New System.Drawing.Size(922, 248)
         Me.ControlBox = False
+        Me.Controls.Add(Me.ListBox4)
+        Me.Controls.Add(Me.ListBox3)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonImport)
         Me.Controls.Add(Me.ListBox2)
@@ -118,6 +140,7 @@ Partial Class FormImport
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormImport"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Import"
         CType(Me.UniquecodeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Red_hiresDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -134,4 +157,6 @@ Partial Class FormImport
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents ButtonImport As Button
     Friend WithEvents ButtonCancel As Button
+    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents ListBox4 As ListBox
 End Class

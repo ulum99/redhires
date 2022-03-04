@@ -1,0 +1,4 @@
+<<uniquecode1>>
+<<product>>
+<<uniquecode2>>
+<<MaterialCode>>

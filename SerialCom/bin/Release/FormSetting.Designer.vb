@@ -43,6 +43,8 @@ Partial Class FormSetting
         Me.ButtonTestConnection = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBoxSerialSetting = New System.Windows.Forms.GroupBox()
+        Me.TextBoxPrinterID = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBoxDBSetting = New System.Windows.Forms.GroupBox()
         Me.ButtonTestDB = New System.Windows.Forms.Button()
         Me.TextBoxDBPass = New System.Windows.Forms.TextBox()
@@ -56,8 +58,11 @@ Partial Class FormSetting
         Me.LabeldBHost = New System.Windows.Forms.Label()
         Me.TextBoxHost = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ContentSettingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBoxSerialSetting.SuspendLayout()
         Me.GroupBoxDBSetting.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LabelPort
@@ -201,7 +206,7 @@ Partial Class FormSetting
         '
         Me.ButtonCancel.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCancel.Location = New System.Drawing.Point(373, 332)
+        Me.ButtonCancel.Location = New System.Drawing.Point(373, 353)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(129, 31)
         Me.ButtonCancel.TabIndex = 13
@@ -212,7 +217,7 @@ Partial Class FormSetting
         '
         Me.ButtonOK.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonOK.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOK.Location = New System.Drawing.Point(549, 332)
+        Me.ButtonOK.Location = New System.Drawing.Point(547, 352)
         Me.ButtonOK.Name = "ButtonOK"
         Me.ButtonOK.Size = New System.Drawing.Size(108, 31)
         Me.ButtonOK.TabIndex = 14
@@ -227,7 +232,7 @@ Partial Class FormSetting
         '
         Me.ButtonTestConnection.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonTestConnection.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTestConnection.Location = New System.Drawing.Point(133, 263)
+        Me.ButtonTestConnection.Location = New System.Drawing.Point(136, 290)
         Me.ButtonTestConnection.Name = "ButtonTestConnection"
         Me.ButtonTestConnection.Size = New System.Drawing.Size(278, 27)
         Me.ButtonTestConnection.TabIndex = 15
@@ -240,7 +245,7 @@ Partial Class FormSetting
         Me.Label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.Label5.Location = New System.Drawing.Point(12, 268)
+        Me.Label5.Location = New System.Drawing.Point(6, 299)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 22)
         Me.Label5.TabIndex = 16
@@ -248,6 +253,8 @@ Partial Class FormSetting
         '
         'GroupBoxSerialSetting
         '
+        Me.GroupBoxSerialSetting.Controls.Add(Me.TextBoxPrinterID)
+        Me.GroupBoxSerialSetting.Controls.Add(Me.Label6)
         Me.GroupBoxSerialSetting.Controls.Add(Me.LabelBaudrate)
         Me.GroupBoxSerialSetting.Controls.Add(Me.Label5)
         Me.GroupBoxSerialSetting.Controls.Add(Me.LabelPort)
@@ -263,12 +270,32 @@ Partial Class FormSetting
         Me.GroupBoxSerialSetting.Controls.Add(Me.ComboBoxBaudrate)
         Me.GroupBoxSerialSetting.Controls.Add(Me.ComboBoxParity)
         Me.GroupBoxSerialSetting.Controls.Add(Me.ComboBoxDataBits)
-        Me.GroupBoxSerialSetting.Location = New System.Drawing.Point(24, 2)
+        Me.GroupBoxSerialSetting.Location = New System.Drawing.Point(24, 23)
         Me.GroupBoxSerialSetting.Name = "GroupBoxSerialSetting"
-        Me.GroupBoxSerialSetting.Size = New System.Drawing.Size(442, 302)
+        Me.GroupBoxSerialSetting.Size = New System.Drawing.Size(442, 324)
         Me.GroupBoxSerialSetting.TabIndex = 17
         Me.GroupBoxSerialSetting.TabStop = False
         Me.GroupBoxSerialSetting.Text = "Serial Setting"
+        '
+        'TextBoxPrinterID
+        '
+        Me.TextBoxPrinterID.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.TextBoxPrinterID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxPrinterID.Location = New System.Drawing.Point(210, 254)
+        Me.TextBoxPrinterID.Name = "TextBoxPrinterID"
+        Me.TextBoxPrinterID.Size = New System.Drawing.Size(121, 26)
+        Me.TextBoxPrinterID.TabIndex = 26
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(15, 258)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(84, 22)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "PrinterID"
         '
         'GroupBoxDBSetting
         '
@@ -285,9 +312,9 @@ Partial Class FormSetting
         Me.GroupBoxDBSetting.Controls.Add(Me.LabeldBPort)
         Me.GroupBoxDBSetting.Controls.Add(Me.LabeldBHost)
         Me.GroupBoxDBSetting.Controls.Add(Me.TextBoxHost)
-        Me.GroupBoxDBSetting.Location = New System.Drawing.Point(472, 2)
+        Me.GroupBoxDBSetting.Location = New System.Drawing.Point(472, 23)
         Me.GroupBoxDBSetting.Name = "GroupBoxDBSetting"
-        Me.GroupBoxDBSetting.Size = New System.Drawing.Size(318, 302)
+        Me.GroupBoxDBSetting.Size = New System.Drawing.Size(318, 324)
         Me.GroupBoxDBSetting.TabIndex = 18
         Me.GroupBoxDBSetting.TabStop = False
         Me.GroupBoxDBSetting.Text = "DB Setting"
@@ -413,26 +440,48 @@ Partial Class FormSetting
         'BackgroundWorker1
         '
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContentSettingToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(812, 24)
+        Me.MenuStrip1.TabIndex = 19
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ContentSettingToolStripMenuItem
+        '
+        Me.ContentSettingToolStripMenuItem.Name = "ContentSettingToolStripMenuItem"
+        Me.ContentSettingToolStripMenuItem.Size = New System.Drawing.Size(102, 20)
+        Me.ContentSettingToolStripMenuItem.Text = "Content Setting"
+        '
         'FormSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(812, 375)
+        Me.ClientSize = New System.Drawing.Size(812, 386)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBoxDBSetting)
         Me.Controls.Add(Me.GroupBoxSerialSetting)
         Me.Controls.Add(Me.ButtonOK)
         Me.Controls.Add(Me.ButtonCancel)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormSetting"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Setting"
         Me.TransparencyKey = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBoxSerialSetting.ResumeLayout(False)
         Me.GroupBoxSerialSetting.PerformLayout()
         Me.GroupBoxDBSetting.ResumeLayout(False)
         Me.GroupBoxDBSetting.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -468,4 +517,8 @@ Partial Class FormSetting
     Friend WithEvents LabeldBHost As Label
     Friend WithEvents TextBoxHost As TextBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBoxPrinterID As TextBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ContentSettingToolStripMenuItem As ToolStripMenuItem
 End Class

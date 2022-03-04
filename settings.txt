@@ -1,4 +1,0 @@
-Item-One=ValueOne
-Item-Two=ValueTwo
-Item-Three=OtherLongValue
-name2=Krimson

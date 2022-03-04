@@ -1,0 +1,197 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SerialCom
+</name>
+</assembly>
+<members>
+<member name="T:SerialCom.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SerialCom.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SerialCom.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:SerialCom.SettingManager">
+ <summary>
+ Manages Settings which can be loaded and saved to a file specified
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SerialCom.SettingManager.#ctor(System.String)">
+ <summary>
+ Create a new SettingManager and loads settings from file specified.
+ If file specified doesnt exist, a new one is created upon save()
+ </summary>
+ <param name="filePath">Setting file to load</param>
+ <remarks></remarks>
+</member>
+<member name="M:SerialCom.SettingManager.GetSetting(System.String)">
+ <summary>
+ Get value of specified setting if exists.
+ If setting doesnt exist, KeyNotFound exception is thrown
+ </summary>
+ <param name="name">Name of setting</param>
+ <returns>Value of setting</returns>
+</member>
+<member name="M:SerialCom.SettingManager.AddSetting(System.String,System.String)">
+ <summary>
+ Adds a new setting.
+ </summary>
+ <param name="name">Name of setting</param>
+ <param name="value">Value of setting</param>
+ <remarks>Save() function should be called to save changes</remarks>
+</member>
+<member name="M:SerialCom.SettingManager.Save">
+ <summary>
+ Saves settings to file. Any new settings added are also saved
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:SerialCom.red_hiresDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.ad_userDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.batchDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.productDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.uniquecodeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.ad_userRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.batchRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.productRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.uniquecodeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.ad_userRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.batchRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.productRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSet.uniquecodeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSetTableAdapters.ad_userTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSetTableAdapters.batchTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSetTableAdapters.productTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSetTableAdapters.uniquecodeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(SerialCom.red_hiresDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(SerialCom.red_hiresDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(SerialCom.red_hiresDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager.UpdateAll(SerialCom.red_hiresDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SerialCom.red_hiresDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:SerialCom.UserControl1">
+<summary>
+UserControl1
+</summary>
+</member>
+<member name="M:SerialCom.UserControl1.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>

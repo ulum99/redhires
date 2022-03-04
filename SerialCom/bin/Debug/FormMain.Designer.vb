@@ -32,6 +32,8 @@ Partial Class FormMain
         Me.ButtonConnect = New System.Windows.Forms.Button()
         Me.LabelComPort = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboProduct = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonEndBatch = New System.Windows.Forms.Button()
         Me.LabelCounter = New System.Windows.Forms.Label()
         Me.LabelCounterPrinted = New System.Windows.Forms.Label()
@@ -41,6 +43,7 @@ Partial Class FormMain
         Me.TextBoxBatchNo = New System.Windows.Forms.TextBox()
         Me.LabelQty = New System.Windows.Forms.Label()
         Me.LabelBatch = New System.Windows.Forms.Label()
+        Me.LabelMessageStokWarning = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBoxProduct = New System.Windows.Forms.ComboBox()
         Me.LabelProductName = New System.Windows.Forms.Label()
@@ -55,6 +58,8 @@ Partial Class FormMain
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResetUniquecodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddProductToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Import = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.JumlahBuffer1 = New System.Windows.Forms.TextBox()
@@ -73,12 +78,35 @@ Partial Class FormMain
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.pb1 = New System.Windows.Forms.PictureBox()
+        Me.Tb1 = New System.Windows.Forms.TextBox()
+        Me.BackgroundWorkerCekUpdate = New System.ComponentModel.BackgroundWorker()
+        Me.Button_getReport = New System.Windows.Forms.Button()
+        Me.Tb2 = New System.Windows.Forms.TextBox()
+        Me.pb2 = New System.Windows.Forms.PictureBox()
+        Me.Tb3 = New System.Windows.Forms.TextBox()
+        Me.pb3 = New System.Windows.Forms.PictureBox()
+        Me.Tb4 = New System.Windows.Forms.TextBox()
+        Me.pb4 = New System.Windows.Forms.PictureBox()
+        Me.Tb5 = New System.Windows.Forms.TextBox()
+        Me.pb5 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Tb6 = New System.Windows.Forms.TextBox()
+        Me.pb6 = New System.Windows.Forms.PictureBox()
         Me.GroupBoxConnect.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonSetting
@@ -109,6 +137,7 @@ Partial Class FormMain
         'TextBoxPrinterID
         '
         Me.TextBoxPrinterID.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.TextBoxPrinterID.Enabled = False
         Me.TextBoxPrinterID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxPrinterID.Location = New System.Drawing.Point(199, 73)
         Me.TextBoxPrinterID.MaxLength = 3
@@ -161,6 +190,8 @@ Partial Class FormMain
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ComboProduct)
+        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.ButtonEndBatch)
         Me.GroupBox2.Controls.Add(Me.LabelCounter)
         Me.GroupBox2.Controls.Add(Me.LabelCounterPrinted)
@@ -170,18 +201,39 @@ Partial Class FormMain
         Me.GroupBox2.Controls.Add(Me.TextBoxBatchNo)
         Me.GroupBox2.Controls.Add(Me.LabelQty)
         Me.GroupBox2.Controls.Add(Me.LabelBatch)
+        Me.GroupBox2.Controls.Add(Me.LabelMessageStokWarning)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 185)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(523, 197)
+        Me.GroupBox2.Size = New System.Drawing.Size(523, 229)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Status"
+        '
+        'ComboProduct
+        '
+        Me.ComboProduct.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ComboProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboProduct.FormattingEnabled = True
+        Me.ComboProduct.Location = New System.Drawing.Point(146, 84)
+        Me.ComboProduct.Name = "ComboProduct"
+        Me.ComboProduct.Size = New System.Drawing.Size(347, 28)
+        Me.ComboProduct.TabIndex = 32
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(17, 87)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 20)
+        Me.Label1.TabIndex = 31
+        Me.Label1.Text = "Product"
         '
         'ButtonEndBatch
         '
         Me.ButtonEndBatch.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonEndBatch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEndBatch.Location = New System.Drawing.Point(22, 120)
+        Me.ButtonEndBatch.Location = New System.Drawing.Point(21, 148)
         Me.ButtonEndBatch.Name = "ButtonEndBatch"
         Me.ButtonEndBatch.Size = New System.Drawing.Size(472, 35)
         Me.ButtonEndBatch.TabIndex = 17
@@ -192,7 +244,7 @@ Partial Class FormMain
         '
         Me.LabelCounter.AutoSize = True
         Me.LabelCounter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCounter.Location = New System.Drawing.Point(148, 91)
+        Me.LabelCounter.Location = New System.Drawing.Point(148, 118)
         Me.LabelCounter.Name = "LabelCounter"
         Me.LabelCounter.Size = New System.Drawing.Size(19, 20)
         Me.LabelCounter.TabIndex = 16
@@ -202,7 +254,7 @@ Partial Class FormMain
         '
         Me.LabelCounterPrinted.AutoSize = True
         Me.LabelCounterPrinted.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCounterPrinted.Location = New System.Drawing.Point(21, 92)
+        Me.LabelCounterPrinted.Location = New System.Drawing.Point(21, 119)
         Me.LabelCounterPrinted.Name = "LabelCounterPrinted"
         Me.LabelCounterPrinted.Size = New System.Drawing.Size(73, 20)
         Me.LabelCounterPrinted.TabIndex = 15
@@ -212,7 +264,7 @@ Partial Class FormMain
         '
         Me.ButtonStartBatch.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ButtonStartBatch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonStartBatch.Location = New System.Drawing.Point(21, 119)
+        Me.ButtonStartBatch.Location = New System.Drawing.Point(21, 148)
         Me.ButtonStartBatch.Name = "ButtonStartBatch"
         Me.ButtonStartBatch.Size = New System.Drawing.Size(472, 35)
         Me.ButtonStartBatch.TabIndex = 7
@@ -234,7 +286,7 @@ Partial Class FormMain
         Me.TextBoxQty.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.TextBoxQty.Enabled = False
         Me.TextBoxQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxQty.Location = New System.Drawing.Point(146, 89)
+        Me.TextBoxQty.Location = New System.Drawing.Point(146, 116)
         Me.TextBoxQty.Name = "TextBoxQty"
         Me.TextBoxQty.Size = New System.Drawing.Size(347, 26)
         Me.TextBoxQty.TabIndex = 3
@@ -242,20 +294,19 @@ Partial Class FormMain
         '
         'TextBoxBatchNo
         '
-        Me.TextBoxBatchNo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.TextBoxBatchNo.BackColor = System.Drawing.SystemColors.HighlightText
         Me.TextBoxBatchNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBoxBatchNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxBatchNo.Location = New System.Drawing.Point(146, 54)
         Me.TextBoxBatchNo.Name = "TextBoxBatchNo"
         Me.TextBoxBatchNo.Size = New System.Drawing.Size(347, 26)
         Me.TextBoxBatchNo.TabIndex = 2
-        Me.TextBoxBatchNo.Text = "123"
         '
         'LabelQty
         '
         Me.LabelQty.AutoSize = True
         Me.LabelQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelQty.Location = New System.Drawing.Point(17, 92)
+        Me.LabelQty.Location = New System.Drawing.Point(17, 119)
         Me.LabelQty.Name = "LabelQty"
         Me.LabelQty.Size = New System.Drawing.Size(111, 20)
         Me.LabelQty.TabIndex = 1
@@ -271,10 +322,22 @@ Partial Class FormMain
         Me.LabelBatch.TabIndex = 0
         Me.LabelBatch.Text = "Batch No"
         '
+        'LabelMessageStokWarning
+        '
+        Me.LabelMessageStokWarning.AutoSize = True
+        Me.LabelMessageStokWarning.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelMessageStokWarning.ForeColor = System.Drawing.Color.Red
+        Me.LabelMessageStokWarning.Location = New System.Drawing.Point(220, 21)
+        Me.LabelMessageStokWarning.Name = "LabelMessageStokWarning"
+        Me.LabelMessageStokWarning.Size = New System.Drawing.Size(261, 19)
+        Me.LabelMessageStokWarning.TabIndex = 30
+        Me.LabelMessageStokWarning.Text = "uniquecode out of stock, please refil !"
+        Me.LabelMessageStokWarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(1037, 144)
+        Me.ComboBox1.Location = New System.Drawing.Point(1421, 155)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 14
@@ -283,7 +346,7 @@ Partial Class FormMain
         '
         Me.ComboBoxProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxProduct.FormattingEnabled = True
-        Me.ComboBoxProduct.Location = New System.Drawing.Point(836, 27)
+        Me.ComboBoxProduct.Location = New System.Drawing.Point(1220, 38)
         Me.ComboBoxProduct.Name = "ComboBoxProduct"
         Me.ComboBoxProduct.Size = New System.Drawing.Size(347, 28)
         Me.ComboBoxProduct.TabIndex = 5
@@ -292,7 +355,7 @@ Partial Class FormMain
         '
         Me.LabelProductName.AutoSize = True
         Me.LabelProductName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelProductName.Location = New System.Drawing.Point(879, 393)
+        Me.LabelProductName.Location = New System.Drawing.Point(1263, 404)
         Me.LabelProductName.Name = "LabelProductName"
         Me.LabelProductName.Size = New System.Drawing.Size(71, 20)
         Me.LabelProductName.TabIndex = 4
@@ -340,7 +403,7 @@ Partial Class FormMain
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(835, 121)
+        Me.TextBox1.Location = New System.Drawing.Point(1219, 132)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(374, 19)
@@ -352,6 +415,7 @@ Partial Class FormMain
         'BackgroundWorker1
         '
         Me.BackgroundWorker1.WorkerReportsProgress = True
+        Me.BackgroundWorker1.WorkerSupportsCancellation = True
         '
         'MenuStrip1
         '
@@ -359,13 +423,13 @@ Partial Class FormMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(792, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1029, 24)
         Me.MenuStrip1.TabIndex = 11
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ResetUniquecodeToolStripMenuItem, Me.AddProductToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -373,8 +437,20 @@ Partial Class FormMain
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'ResetUniquecodeToolStripMenuItem
+        '
+        Me.ResetUniquecodeToolStripMenuItem.Name = "ResetUniquecodeToolStripMenuItem"
+        Me.ResetUniquecodeToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.ResetUniquecodeToolStripMenuItem.Text = "Reset Uniquecode"
+        '
+        'AddProductToolStripMenuItem
+        '
+        Me.AddProductToolStripMenuItem.Name = "AddProductToolStripMenuItem"
+        Me.AddProductToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.AddProductToolStripMenuItem.Text = "Add Product"
         '
         'Import
         '
@@ -389,7 +465,7 @@ Partial Class FormMain
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(835, 61)
+        Me.Button1.Location = New System.Drawing.Point(1219, 72)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 32)
         Me.Button1.TabIndex = 13
@@ -398,14 +474,14 @@ Partial Class FormMain
         '
         'JumlahBuffer1
         '
-        Me.JumlahBuffer1.Location = New System.Drawing.Point(842, 167)
+        Me.JumlahBuffer1.Location = New System.Drawing.Point(1226, 178)
         Me.JumlahBuffer1.Name = "JumlahBuffer1"
         Me.JumlahBuffer1.Size = New System.Drawing.Size(175, 20)
         Me.JumlahBuffer1.TabIndex = 14
         '
         'JumlahBuffer2
         '
-        Me.JumlahBuffer2.Location = New System.Drawing.Point(1036, 167)
+        Me.JumlahBuffer2.Location = New System.Drawing.Point(1420, 178)
         Me.JumlahBuffer2.Name = "JumlahBuffer2"
         Me.JumlahBuffer2.Size = New System.Drawing.Size(175, 20)
         Me.JumlahBuffer2.TabIndex = 15
@@ -413,7 +489,7 @@ Partial Class FormMain
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(835, 198)
+        Me.ListBox1.Location = New System.Drawing.Point(1219, 209)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(175, 160)
         Me.ListBox1.TabIndex = 16
@@ -425,14 +501,14 @@ Partial Class FormMain
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(962, 204)
+        Me.ListBox2.Location = New System.Drawing.Point(1346, 215)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(175, 160)
         Me.ListBox2.TabIndex = 17
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(842, 145)
+        Me.TextBox2.Location = New System.Drawing.Point(1226, 156)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(139, 20)
         Me.TextBox2.TabIndex = 18
@@ -443,21 +519,21 @@ Partial Class FormMain
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(1037, 125)
+        Me.TextBox3.Location = New System.Drawing.Point(1421, 136)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 20)
         Me.TextBox3.TabIndex = 19
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(835, 370)
+        Me.TextBox4.Location = New System.Drawing.Point(1219, 381)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(180, 20)
         Me.TextBox4.TabIndex = 20
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(982, 372)
+        Me.Button2.Location = New System.Drawing.Point(1366, 383)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 21
@@ -470,14 +546,14 @@ Partial Class FormMain
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(917, 61)
+        Me.TextBox5.Location = New System.Drawing.Point(1301, 72)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
         Me.TextBox5.TabIndex = 22
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(1203, 87)
+        Me.TextBox6.Location = New System.Drawing.Point(1587, 98)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(100, 20)
         Me.TextBox6.TabIndex = 23
@@ -485,7 +561,7 @@ Partial Class FormMain
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(1040, 61)
+        Me.CheckBox1.Location = New System.Drawing.Point(1424, 72)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(41, 17)
         Me.CheckBox1.TabIndex = 24
@@ -495,7 +571,7 @@ Partial Class FormMain
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(1040, 77)
+        Me.CheckBox2.Location = New System.Drawing.Point(1424, 88)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(38, 17)
         Me.CheckBox2.TabIndex = 25
@@ -505,43 +581,240 @@ Partial Class FormMain
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(1040, 98)
+        Me.CheckBox3.Location = New System.Drawing.Point(1424, 109)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(53, 17)
         Me.CheckBox3.TabIndex = 26
         Me.CheckBox3.Text = "CRLF"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'pb1
         '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(552, 73)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(228, 194)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 27
-        Me.PictureBox1.TabStop = False
+        Me.pb1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pb1.Location = New System.Drawing.Point(552, 59)
+        Me.pb1.Name = "pb1"
+        Me.pb1.Size = New System.Drawing.Size(142, 127)
+        Me.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pb1.TabIndex = 27
+        Me.pb1.TabStop = False
         '
-        'TextBox7
+        'Tb1
         '
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(552, 283)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(228, 20)
-        Me.TextBox7.TabIndex = 28
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Tb1.Enabled = False
+        Me.Tb1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tb1.Location = New System.Drawing.Point(552, 192)
+        Me.Tb1.Multiline = True
+        Me.Tb1.Name = "Tb1"
+        Me.Tb1.Size = New System.Drawing.Size(142, 32)
+        Me.Tb1.TabIndex = 28
+        Me.Tb1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BackgroundWorkerCekUpdate
+        '
+        '
+        'Button_getReport
+        '
+        Me.Button_getReport.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Button_getReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_getReport.Location = New System.Drawing.Point(264, 27)
+        Me.Button_getReport.Name = "Button_getReport"
+        Me.Button_getReport.Size = New System.Drawing.Size(118, 32)
+        Me.Button_getReport.TabIndex = 29
+        Me.Button_getReport.Text = "Get Report"
+        Me.Button_getReport.UseVisualStyleBackColor = False
+        '
+        'Tb2
+        '
+        Me.Tb2.Enabled = False
+        Me.Tb2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tb2.Location = New System.Drawing.Point(718, 192)
+        Me.Tb2.Multiline = True
+        Me.Tb2.Name = "Tb2"
+        Me.Tb2.Size = New System.Drawing.Size(142, 32)
+        Me.Tb2.TabIndex = 31
+        Me.Tb2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pb2
+        '
+        Me.pb2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pb2.Location = New System.Drawing.Point(718, 59)
+        Me.pb2.Name = "pb2"
+        Me.pb2.Size = New System.Drawing.Size(142, 127)
+        Me.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pb2.TabIndex = 30
+        Me.pb2.TabStop = False
+        '
+        'Tb3
+        '
+        Me.Tb3.Enabled = False
+        Me.Tb3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tb3.Location = New System.Drawing.Point(881, 192)
+        Me.Tb3.Multiline = True
+        Me.Tb3.Name = "Tb3"
+        Me.Tb3.Size = New System.Drawing.Size(142, 32)
+        Me.Tb3.TabIndex = 33
+        Me.Tb3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pb3
+        '
+        Me.pb3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pb3.Location = New System.Drawing.Point(881, 59)
+        Me.pb3.Name = "pb3"
+        Me.pb3.Size = New System.Drawing.Size(142, 127)
+        Me.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pb3.TabIndex = 32
+        Me.pb3.TabStop = False
+        '
+        'Tb4
+        '
+        Me.Tb4.Enabled = False
+        Me.Tb4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tb4.Location = New System.Drawing.Point(554, 379)
+        Me.Tb4.Multiline = True
+        Me.Tb4.Name = "Tb4"
+        Me.Tb4.Size = New System.Drawing.Size(142, 32)
+        Me.Tb4.TabIndex = 35
+        Me.Tb4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pb4
+        '
+        Me.pb4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pb4.Location = New System.Drawing.Point(554, 245)
+        Me.pb4.Name = "pb4"
+        Me.pb4.Size = New System.Drawing.Size(142, 127)
+        Me.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pb4.TabIndex = 34
+        Me.pb4.TabStop = False
+        '
+        'Tb5
+        '
+        Me.Tb5.Enabled = False
+        Me.Tb5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tb5.Location = New System.Drawing.Point(719, 379)
+        Me.Tb5.Multiline = True
+        Me.Tb5.Name = "Tb5"
+        Me.Tb5.Size = New System.Drawing.Size(142, 32)
+        Me.Tb5.TabIndex = 37
+        Me.Tb5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pb5
+        '
+        Me.pb5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pb5.Location = New System.Drawing.Point(719, 245)
+        Me.pb5.Name = "pb5"
+        Me.pb5.Size = New System.Drawing.Size(142, 127)
+        Me.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pb5.TabIndex = 36
+        Me.pb5.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(617, 43)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(16, 16)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "1"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(782, 43)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(16, 16)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "2"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(939, 43)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(16, 16)
+        Me.Label4.TabIndex = 40
+        Me.Label4.Text = "3"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(621, 226)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(16, 16)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "4"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(784, 226)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(16, 16)
+        Me.Label6.TabIndex = 42
+        Me.Label6.Text = "5"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(945, 225)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(16, 16)
+        Me.Label7.TabIndex = 45
+        Me.Label7.Text = "6"
+        '
+        'Tb6
+        '
+        Me.Tb6.Enabled = False
+        Me.Tb6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tb6.Location = New System.Drawing.Point(880, 378)
+        Me.Tb6.Multiline = True
+        Me.Tb6.Name = "Tb6"
+        Me.Tb6.Size = New System.Drawing.Size(142, 32)
+        Me.Tb6.TabIndex = 44
+        Me.Tb6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pb6
+        '
+        Me.pb6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pb6.Location = New System.Drawing.Point(880, 244)
+        Me.pb6.Name = "pb6"
+        Me.pb6.Size = New System.Drawing.Size(142, 127)
+        Me.pb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pb6.TabIndex = 43
+        Me.pb6.TabStop = False
         '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(792, 386)
-        Me.Controls.Add(Me.TextBox7)
+        Me.ClientSize = New System.Drawing.Size(1029, 426)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Tb6)
+        Me.Controls.Add(Me.pb6)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Tb5)
+        Me.Controls.Add(Me.pb5)
+        Me.Controls.Add(Me.Tb4)
+        Me.Controls.Add(Me.pb4)
+        Me.Controls.Add(Me.Tb3)
+        Me.Controls.Add(Me.pb3)
+        Me.Controls.Add(Me.Tb2)
+        Me.Controls.Add(Me.pb2)
+        Me.Controls.Add(Me.Button_getReport)
+        Me.Controls.Add(Me.Tb1)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pb1)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
@@ -575,6 +848,7 @@ Partial Class FormMain
         Me.MinimizeBox = False
         Me.Name = "FormMain"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SerialCom"
         Me.GroupBoxConnect.ResumeLayout(False)
         Me.GroupBoxConnect.PerformLayout()
@@ -582,7 +856,12 @@ Partial Class FormMain
         Me.GroupBox2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -610,7 +889,6 @@ Partial Class FormMain
     Friend WithEvents TextBoxPrinterID As TextBox
     Friend WithEvents LabelPrinterID As Label
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TimerCheckSerial As Timer
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents Import As Button
@@ -637,6 +915,30 @@ Partial Class FormMain
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents pb1 As PictureBox
+    Friend WithEvents Tb1 As TextBox
+    Friend WithEvents BackgroundWorkerCekUpdate As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Button_getReport As Button
+    Friend WithEvents ResetUniquecodeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LabelMessageStokWarning As Label
+    Friend WithEvents ComboProduct As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Tb2 As TextBox
+    Friend WithEvents pb2 As PictureBox
+    Friend WithEvents Tb3 As TextBox
+    Friend WithEvents pb3 As PictureBox
+    Friend WithEvents Tb4 As TextBox
+    Friend WithEvents pb4 As PictureBox
+    Friend WithEvents Tb5 As TextBox
+    Friend WithEvents pb5 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Public WithEvents TimerCheckSerial As Timer
+    Friend WithEvents AddProductToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Tb6 As TextBox
+    Friend WithEvents pb6 As PictureBox
 End Class

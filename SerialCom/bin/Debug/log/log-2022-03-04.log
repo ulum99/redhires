@@ -1,0 +1,131 @@
+2022-03-04 21:45:29,228 [1] INFO - [SerialCom] setting
+2022-03-04 21:45:30,961 [1] INFO - [SerialCom] FieldSetting
+2022-03-04 21:45:43,135 [1] INFO - [SerialCom] Port : COM1|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2022-03-04 21:45:58,387 [1] INFO - [SerialCom] Port : COM1|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2022-03-04 21:46:01,785 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:01,837 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 988
+2022-03-04 21:46:01,853 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:01,867 [1] INFO - [SerialCom] Db Select product- SELECT id,codekey,name FROM product - 19-ABC-Test
+2022-03-04 21:46:05,539 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:05,552 [1] INFO - [SerialCom] Result insert return id - INSERT INTO batch(created,batchno,productid) VALUES (now(), '123', 0) RETURNING id; - 107
+2022-03-04 21:46:05,552 [1] INFO - [SerialCom] BACTCH ID : 107
+2022-03-04 21:46:05,553 [1] INFO - [SerialCom] productid Selected - 19
+2022-03-04 21:46:05,553 [1] INFO - [SerialCom] ProductCode Selected - ABC
+2022-03-04 21:46:05,597 [11] DEBUG- [SerialCom] Argumen WOrker --- ECHO
+2022-03-04 21:46:05,606 [1] INFO - [SerialCom] Start Batch Clicked
+2022-03-04 21:46:09,069 [11] INFO - [SerialCom] argumentOfworker : ECHO-0,FDOK
+2022-03-04 21:46:09,084 [13] DEBUG- [SerialCom] Argumen WOrker --- PEEC
+2022-03-04 21:46:10,612 [13] INFO - [SerialCom] Send To Printer : 0,PEEC,1, | Response : 0,OK
+2022-03-04 21:46:10,612 [13] INFO - [SerialCom] argumentOfworker : PEEC-0,OK
+2022-03-04 21:46:10,615 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:10,626 [1] INFO - [SerialCom] Result Update - With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL and isactive = TRUE Order by id asc LIMIT 4 for update) Update uniquecode u set buffered=now(), batchid = 107 From identifier where identifier.id = u.id - 4
+2022-03-04 21:46:10,628 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:10,630 [1] INFO - [SerialCom] Db Select - SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - Z74QQLTZ,7X9994L3,7X4GGGF3,Z7JF3PLX,Z7EAM6H3,Z7JNFQ6F,Z73EN6UF,Z7UCTUM4,Z7UJ4MA3,Z7UQ3N3F,Z7GTAE6Z,7XHTHGH3,7XGPJUFA,Z7LL693F,7XFACEAZ,Z7L97A36
+2022-03-04 21:46:10,632 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:10,634 [1] INFO - [SerialCom] Db Select2 - SELECT uniquecode,id,uniquecode2 FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - NQTMTUH6,NQ33PNU4,NQP79CE4,NQT9LPPA,NQHMQU44,NQMF4M6C,NQHHTE7A,NQTF9UP9,NQJUAGG6,NQNCP7F9,NQAQEU44,NQTMUE79,NQGJC699,NQJTCJU9,NQ46QPMC,NQALTGE4
+2022-03-04 21:46:10,637 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:10,643 [1] INFO - [SerialCom] Db Select3 - SELECT uniquecode,id,uniquecode2,MaterialCode FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - NQTMTUH6,NQ33PNU4,NQP79CE4,NQT9LPPA,NQHMQU44,NQMF4M6C,NQHHTE7A,NQTF9UP9,NQJUAGG6,NQNCP7F9,NQAQEU44,NQTMUE79,NQGJC699,NQJTCJU9,NQ46QPMC,NQALTGE4
+2022-03-04 21:46:10,645 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:46:10,647 [1] INFO - [SerialCom] Db Selectid - SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY id asc - 4243,4244,4245,4246,4247,4248,4249,4250,4251,4252,4253,4254,4255,4256,4257,4258
+2022-03-04 21:46:10,661 [12] DEBUG- [SerialCom] Argumen WOrker --- MSST
+2022-03-04 21:46:21,196 [12] INFO - [SerialCom] Send To Printer : 0,MSST,6, | Response : 0,OK
+2022-03-04 21:46:21,197 [12] INFO - [SerialCom] argumentOfworker : MSST-0,OK
+2022-03-04 21:46:23,484 [11] DEBUG- [SerialCom] Argumen WOrker --- SMFM
+2022-03-04 21:46:23,491 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:ABC Z74QQLTZ
+2022-03-04 21:46:23,491 [11] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:ABC Z74QQLTZ
+2022-03-04 21:46:23,491 [1] INFO - [SerialCom] Ready Start Clicked
+2022-03-04 21:46:36,789 [11] INFO - [SerialCom] Response SMFM field-0 0,PEOK
+2022-03-04 21:46:36,791 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:ABC Z74QQLTZ | Response : 0,PEOK
+2022-03-04 21:46:36,792 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,02,04,1,300,0000,TEXT,Z74QQLTZ
+2022-03-04 21:46:36,794 [11] DEBUG- [SerialCom] UTF-8 : Z74QQLTZ
+2022-03-04 21:46:36,794 [11] INFO - [SerialCom] Response SMFM field-1 
+2022-03-04 21:46:36,795 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,02,04,1,300,0000,TEXT,Z74QQLTZ | Response : 
+2022-03-04 21:46:36,795 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:ABC NQTMTUH6
+2022-03-04 21:46:36,796 [11] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:ABC NQTMTUH6
+2022-03-04 21:46:36,796 [11] INFO - [SerialCom] Response SMFM field-2 
+2022-03-04 21:46:36,797 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:ABC NQTMTUH6 | Response : 
+2022-03-04 21:46:36,797 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,04,04,1,900,0000,TEXT,NQTMTUH6
+2022-03-04 21:46:36,798 [11] DEBUG- [SerialCom] UTF-8 : NQTMTUH6
+2022-03-04 21:46:36,798 [11] INFO - [SerialCom] Response SMFM field-3 
+2022-03-04 21:46:36,799 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,04,04,1,900,0000,TEXT,NQTMTUH6 | Response : 
+2022-03-04 21:46:36,799 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,05,05,1,1000,0000,TEXT,NK 212-63AA00001
+2022-03-04 21:46:36,800 [11] DEBUG- [SerialCom] UTF-8 : NK 212-63AA00001
+2022-03-04 21:46:36,800 [11] INFO - [SerialCom] Response SMFM field-4 
+2022-03-04 21:46:36,801 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,05,05,1,1000,0000,TEXT,NK 212-63AA00001 | Response : 
+2022-03-04 21:46:36,801 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,06,06,1,2000,0000,TEXT,NK 212-63AA00001
+2022-03-04 21:46:36,802 [11] DEBUG- [SerialCom] UTF-8 : NK 212-63AA00001
+2022-03-04 21:46:36,802 [11] INFO - [SerialCom] Response SMFM field-5 
+2022-03-04 21:46:36,803 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,06,06,1,2000,0000,TEXT,NK 212-63AA00001 | Response : 
+2022-03-04 21:46:36,803 [11] DEBUG- [SerialCom] Kirim kodeunik to Printer - SMFM
+2022-03-04 21:46:36,803 [11] INFO - [SerialCom] argumentOfworker : SMFM-
+2022-03-04 21:46:37,117 [1] DEBUG- [SerialCom] ke-0:SMSTO:0812244831555:ABC Z74QQLTZ
+2022-03-04 21:46:37,121 [1] DEBUG- [SerialCom] ke-1:Z74QQLTZ
+2022-03-04 21:46:37,133 [1] DEBUG- [SerialCom] ke-2:SMSTO:0812244831555:ABC NQTMTUH6
+2022-03-04 21:46:37,136 [1] DEBUG- [SerialCom] ke-3:NQTMTUH6
+2022-03-04 21:46:37,139 [1] DEBUG- [SerialCom] ke-4:NK 212-63AA00001
+2022-03-04 21:46:37,142 [1] DEBUG- [SerialCom] ke-5:NK 212-63AA00001
+2022-03-04 21:46:37,142 [13] DEBUG- [SerialCom] Argumen WOrker --- JTST
+2022-03-04 21:46:40,157 [13] INFO - [SerialCom] Send To Printer : 0,JTST
+2022-03-04 21:46:40,157 [13] INFO - [SerialCom] argumentOfworker : JTST-OK
+2022-03-04 21:47:54,869 [1] INFO - [SerialCom] Stop Print Clicked
+2022-03-04 21:48:07,348 [1] INFO - [SerialCom] Stop Print Clicked
+2022-03-04 21:48:11,387 [1] INFO - [SerialCom] Stop Print Clicked
+2022-03-04 21:48:13,523 [1] INFO - [SerialCom] Stop Print Clicked
+2022-03-04 21:48:15,170 [1] INFO - [SerialCom] Stop Print Clicked
+2022-03-04 21:48:19,980 [1] INFO - [SerialCom] Stop Print Clicked
+2022-03-04 21:48:34,646 [1] DEBUG- [SerialCom] PRINTED
+2022-03-04 21:48:34,653 [14] DEBUG- [SerialCom] UPDATE uniquecode SET printed = now(), productid = 19 WHERE buffered IS NOT NULL and uniquecode = 'Z74QQLTZ'
+2022-03-04 21:48:34,654 [14] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:48:34,646 [11] DEBUG- [SerialCom] Kode Unik1 : 7X9994L3
+2022-03-04 21:48:34,658 [11] DEBUG- [SerialCom] Kode Unik2 : NQ33PNU4
+2022-03-04 21:48:34,663 [11] DEBUG- [SerialCom] MaterialCode : NK 212-63AA00002
+2022-03-04 21:48:34,665 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:ABC 7X9994L3
+2022-03-04 21:48:34,665 [11] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:ABC 7X9994L3
+2022-03-04 21:48:34,659 [14] INFO - [SerialCom] Result Update - UPDATE uniquecode SET printed = now(), productid = 19 WHERE buffered IS NOT NULL and uniquecode = 'Z74QQLTZ' - 1
+2022-03-04 21:48:34,671 [14] DEBUG- [SerialCom] Result Update Printed Uniquecode - 1
+2022-03-04 21:48:45,621 [11] INFO - [SerialCom] Response SMFM field-0 0,PEOK
+2022-03-04 21:48:45,621 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:ABC 7X9994L3 | Response : 0,PEOK
+2022-03-04 21:48:45,622 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,02,04,1,300,0000,TEXT,7X9994L3
+2022-03-04 21:48:45,622 [11] DEBUG- [SerialCom] UTF-8 : 7X9994L3
+2022-03-04 21:48:45,623 [11] INFO - [SerialCom] Response SMFM field-1 
+2022-03-04 21:48:45,624 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,02,04,1,300,0000,TEXT,7X9994L3 | Response : 
+2022-03-04 21:48:45,624 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:ABC NQ33PNU4
+2022-03-04 21:48:45,626 [11] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:ABC NQ33PNU4
+2022-03-04 21:48:45,627 [11] INFO - [SerialCom] Response SMFM field-2 
+2022-03-04 21:48:45,627 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:ABC NQ33PNU4 | Response : 
+2022-03-04 21:48:45,629 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,04,04,1,900,0000,TEXT,NQ33PNU4
+2022-03-04 21:48:45,630 [11] DEBUG- [SerialCom] UTF-8 : NQ33PNU4
+2022-03-04 21:48:45,630 [11] INFO - [SerialCom] Response SMFM field-3 
+2022-03-04 21:48:45,631 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,04,04,1,900,0000,TEXT,NQ33PNU4 | Response : 
+2022-03-04 21:48:45,631 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,05,05,1,1000,0000,TEXT,NK 212-63AA00002
+2022-03-04 21:48:45,632 [11] DEBUG- [SerialCom] UTF-8 : NK 212-63AA00002
+2022-03-04 21:48:45,632 [11] INFO - [SerialCom] Response SMFM field-4 
+2022-03-04 21:48:45,633 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,05,05,1,1000,0000,TEXT,NK 212-63AA00002 | Response : 
+2022-03-04 21:48:45,633 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,06,06,1,2000,0000,TEXT,NK 212-63AA00002
+2022-03-04 21:48:45,633 [11] DEBUG- [SerialCom] UTF-8 : NK 212-63AA00002
+2022-03-04 21:48:45,634 [11] INFO - [SerialCom] Response SMFM field-5 
+2022-03-04 21:48:45,634 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,06,06,1,2000,0000,TEXT,NK 212-63AA00002 | Response : 
+2022-03-04 21:48:45,635 [11] INFO - [SerialCom] argumentOfworker : SMFM-ON-PRINT-
+2022-03-04 21:48:45,649 [1] DEBUG- [SerialCom] ke-0:SMSTO:0812244831555:ABC 7X9994L3
+2022-03-04 21:48:45,650 [1] DEBUG- [SerialCom] ke-1:7X9994L3
+2022-03-04 21:48:45,661 [1] DEBUG- [SerialCom] ke-2:SMSTO:0812244831555:ABC NQ33PNU4
+2022-03-04 21:48:45,662 [1] DEBUG- [SerialCom] ke-3:NQ33PNU4
+2022-03-04 21:48:45,663 [1] DEBUG- [SerialCom] ke-4:NK 212-63AA00002
+2022-03-04 21:48:45,665 [1] DEBUG- [SerialCom] ke-5:NK 212-63AA00002
+2022-03-04 21:48:57,420 [1] DEBUG- [SerialCom] PRINTED
+2022-03-04 21:48:57,420 [8] DEBUG- [SerialCom] Kode Unik1 : 7X4GGGF3
+2022-03-04 21:48:57,422 [8] DEBUG- [SerialCom] Kode Unik2 : NQP79CE4
+2022-03-04 21:48:57,423 [8] DEBUG- [SerialCom] MaterialCode : NK 212-63AA00003
+2022-03-04 21:48:57,423 [8] DEBUG- [SerialCom] Original : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:ABC 7X4GGGF3
+2022-03-04 21:48:57,420 [16] DEBUG- [SerialCom] UPDATE uniquecode SET printed = now(), productid = 19 WHERE buffered IS NOT NULL and uniquecode = '7X9994L3'
+2022-03-04 21:48:57,426 [16] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:48:57,425 [8] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:ABC 7X4GGGF3
+2022-03-04 21:48:57,428 [16] INFO - [SerialCom] Result Update - UPDATE uniquecode SET printed = now(), productid = 19 WHERE buffered IS NOT NULL and uniquecode = '7X9994L3' - 1
+2022-03-04 21:48:57,431 [16] DEBUG- [SerialCom] Result Update Printed Uniquecode - 1
+2022-03-04 21:49:11,948 [1] INFO - [SerialCom] Stop Print Clicked
+2022-03-04 21:49:17,484 [11] INFO - [SerialCom] Send To Printer : 0,JTSP,\r\n
+2022-03-04 21:49:17,497 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:49:17,500 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 14
+2022-03-04 21:49:20,494 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2022-03-04 21:49:20,496 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 0
+2022-03-04 21:49:20,496 [1] INFO - [SerialCom] End Batch Clicked

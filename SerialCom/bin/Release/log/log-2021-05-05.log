@@ -1,0 +1,425 @@
+2021-05-05 04:39:29,908 [1] INFO - [SerialCom] Port : COM1|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-05-05 04:39:35,216 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 04:39:35,267 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 8
+2021-05-05 04:39:35,281 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 04:39:35,293 [1] INFO - [SerialCom] Db Select product- SELECT id,codekey,name FROM product - 2-TEST1-TEST1,3-TEST2-TEST2
+2021-05-05 04:39:43,696 [1] ERROR- [SerialCom] Printer Status :  - Connection Disconnected
+2021-05-05 04:59:19,332 [1] INFO - [SerialCom] Port : COM1|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-05-05 04:59:23,713 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 04:59:23,776 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 8
+2021-05-05 04:59:23,795 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 04:59:23,809 [1] INFO - [SerialCom] Db Select product- SELECT id,codekey,name FROM product - 2-TEST1-TEST1,3-TEST2-TEST2
+2021-05-05 04:59:26,376 [1] ERROR- [SerialCom] Printer Status :  - Connection Disconnected
+2021-05-05 04:59:27,561 [1] INFO - [SerialCom] Report
+2021-05-05 04:59:33,469 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 04:59:33,727 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 04:59:38,502 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 04:59:38,543 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:00:00,105 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:00:00,109 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:01:05,761 [1] INFO - [SerialCom] Report
+2021-05-05 05:01:10,939 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:01:11,285 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:01:17,872 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:01:17,875 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:04:26,741 [1] INFO - [SerialCom] Report
+2021-05-05 05:04:30,829 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:04:31,165 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:07:17,009 [1] INFO - [SerialCom] Report
+2021-05-05 05:07:22,213 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:07:22,553 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:07:51,931 [1] INFO - [SerialCom] Report
+2021-05-05 05:07:55,971 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:07:56,313 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:08:08,313 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:08:08,316 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:08:42,654 [1] INFO - [SerialCom] Report
+2021-05-05 05:08:46,336 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:08:46,622 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:09:41,979 [1] INFO - [SerialCom] Report
+2021-05-05 05:09:46,979 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:09:47,330 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:09:49,591 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:09:49,594 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:09:53,434 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:09:53,436 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:09:59,236 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:09:59,238 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:10:03,827 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:10:03,830 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:10:41,077 [1] INFO - [SerialCom] Report
+2021-05-05 05:10:52,422 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:10:52,794 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:12:35,993 [1] INFO - [SerialCom] Report
+2021-05-05 05:12:38,893 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:12:38,896 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:13:16,088 [1] INFO - [SerialCom] Report
+2021-05-05 05:13:20,060 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:13:20,418 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:14:44,372 [1] INFO - [SerialCom] Report
+2021-05-05 05:14:48,826 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:14:49,181 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:15:28,998 [1] INFO - [SerialCom] Report
+2021-05-05 05:15:34,068 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:15:34,426 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:23:20,070 [1] INFO - [SerialCom] Report
+2021-05-05 05:23:24,428 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:23:24,772 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:31:44,871 [1] INFO - [SerialCom] Report
+2021-05-05 05:31:48,769 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:31:49,136 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:32:15,595 [1] INFO - [SerialCom] Report
+2021-05-05 05:32:20,918 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:32:21,284 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:35:01,197 [1] INFO - [SerialCom] Report
+2021-05-05 05:35:05,617 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:35:06,005 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:36:38,417 [1] INFO - [SerialCom] Report
+2021-05-05 05:36:43,741 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:36:44,126 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:46:24,738 [1] INFO - [SerialCom] Report
+2021-05-05 05:46:29,688 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:46:30,055 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:48:07,407 [1] INFO - [SerialCom] Report
+2021-05-05 05:48:12,577 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:48:12,953 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:49:02,110 [1] INFO - [SerialCom] Report
+2021-05-05 05:49:06,598 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:49:06,973 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:49:54,885 [1] INFO - [SerialCom] Report
+2021-05-05 05:50:01,283 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:50:01,641 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:53:32,403 [1] INFO - [SerialCom] Report
+2021-05-05 05:53:36,948 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:53:37,308 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:55:14,537 [1] INFO - [SerialCom] Report
+2021-05-05 05:55:19,865 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:55:20,234 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:56:54,968 [1] INFO - [SerialCom] Report
+2021-05-05 05:57:00,441 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:57:00,836 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 05:57:58,764 [1] INFO - [SerialCom] Report
+2021-05-05 05:58:03,315 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 05:58:03,677 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 06:16:34,138 [1] INFO - [SerialCom] Report
+2021-05-05 06:16:38,874 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 06:16:39,247 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 06:20:39,224 [1] INFO - [SerialCom] Report
+2021-05-05 06:20:44,730 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 06:20:45,072 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 06:22:34,534 [1] INFO - [SerialCom] import
+2021-05-05 06:22:36,958 [1] INFO - [SerialCom] Report
+2021-05-05 06:22:42,080 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 06:22:42,368 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-05-05 11:09:54,144 [1] INFO - [SerialCom] setting
+2021-05-05 11:10:01,795 [1] INFO - [SerialCom] setting
+2021-05-05 11:10:03,389 [1] INFO - [SerialCom] FieldSetting
+2021-05-05 11:10:16,259 [1] INFO - [SerialCom] Port : COM6|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-05-05 11:10:25,519 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:25,576 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 8
+2021-05-05 11:10:25,589 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:25,605 [1] INFO - [SerialCom] Db Select product- SELECT id,codekey,name FROM product - 2-TEST1-TEST1,3-TEST2-TEST2
+2021-05-05 11:10:34,362 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:34,380 [1] INFO - [SerialCom] Result insert return id - INSERT INTO batch(created,batchno,productid) VALUES (now(), '1', 0) RETURNING id; - 92
+2021-05-05 11:10:34,381 [1] INFO - [SerialCom] BACTCH ID : 92
+2021-05-05 11:10:34,381 [1] INFO - [SerialCom] productid Selected - 2
+2021-05-05 11:10:34,382 [1] INFO - [SerialCom] ProductCode Selected - TEST1
+2021-05-05 11:10:34,429 [1] INFO - [SerialCom] Start Batch Clicked
+2021-05-05 11:10:34,456 [10] DEBUG- [SerialCom] Argumen WOrker --- ECHO
+2021-05-05 11:10:34,519 [10] INFO - [SerialCom] argumentOfworker : ECHO-0,ECHO
+2021-05-05 11:10:34,536 [12] DEBUG- [SerialCom] Argumen WOrker --- PEEC
+2021-05-05 11:10:34,541 [12] INFO - [SerialCom] Send To Printer : 0,PEEC,1, | Response : 0,
+2021-05-05 11:10:34,541 [12] INFO - [SerialCom] argumentOfworker : PEEC-0,
+2021-05-05 11:10:34,544 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:34,556 [1] INFO - [SerialCom] Result Update - With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL and isactive = TRUE Order by id asc LIMIT 4 for update) Update uniquecode u set buffered=now(), batchid = 92 From identifier where identifier.id = u.id - 4
+2021-05-05 11:10:34,558 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:34,560 [1] INFO - [SerialCom] Db Select - SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - 00000000013,00000000014,00000000015,00000000016
+2021-05-05 11:10:34,562 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:34,564 [1] INFO - [SerialCom] Db Select2 - SELECT uniquecode,id,uniquecode2 FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - AAA13,AAA14,AAA15,AAA16
+2021-05-05 11:10:34,566 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:34,567 [1] INFO - [SerialCom] Db Selectid - SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY id asc - 94,95,96,97
+2021-05-05 11:10:34,576 [15] DEBUG- [SerialCom] Argumen WOrker --- MSST
+2021-05-05 11:10:34,578 [15] INFO - [SerialCom] Send To Printer : 0,MSST,6, | Response : PEEC,1,
+2021-05-05 11:10:34,579 [15] INFO - [SerialCom] argumentOfworker : MSST-PEEC,1,
+2021-05-05 11:10:39,996 [10] DEBUG- [SerialCom] Argumen WOrker --- SMFM
+2021-05-05 11:10:40,003 [1] INFO - [SerialCom] Ready Start Clicked
+2021-05-05 11:10:40,005 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:10:40,006 [10] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:10:40,006 [10] INFO - [SerialCom] Response SMFM field-0 0,FAIL
+
+
+2021-05-05 11:10:40,007 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:TEST1 00000000013 | Response : 0,FAIL
+2021-05-05 11:10:40,007 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,02,04,1,300,0000,TEXT,00000000013
+2021-05-05 11:10:40,008 [10] DEBUG- [SerialCom] UTF-8 : 00000000013
+2021-05-05 11:10:40,008 [10] INFO - [SerialCom] Response SMFM field-1 
+2021-05-05 11:10:40,009 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,02,04,1,300,0000,TEXT,00000000013 | Response : 
+2021-05-05 11:10:40,009 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:10:40,010 [10] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:10:40,012 [10] INFO - [SerialCom] Response SMFM field-2 
+2021-05-05 11:10:40,012 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:TEST1 AAA13 | Response : 
+2021-05-05 11:10:40,013 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,04,04,1,900,0000,TEXT,AAA13
+2021-05-05 11:10:40,013 [10] DEBUG- [SerialCom] UTF-8 : AAA13
+2021-05-05 11:10:40,015 [10] INFO - [SerialCom] Response SMFM field-3 
+2021-05-05 11:10:40,016 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,04,04,1,900,0000,TEXT,AAA13 | Response : 
+2021-05-05 11:10:40,016 [10] DEBUG- [SerialCom] Kirim kodeunik to Printer - SMFM
+2021-05-05 11:10:40,017 [10] INFO - [SerialCom] argumentOfworker : SMFM-
+2021-05-05 11:10:40,291 [1] DEBUG- [SerialCom] ke-0:SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:10:40,293 [1] DEBUG- [SerialCom] ke-1:00000000013
+2021-05-05 11:10:40,303 [1] DEBUG- [SerialCom] ke-2:SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:10:40,306 [1] DEBUG- [SerialCom] ke-3:AAA13
+2021-05-05 11:10:40,306 [14] DEBUG- [SerialCom] Argumen WOrker --- JTST
+2021-05-05 11:10:43,321 [14] INFO - [SerialCom] Send To Printer : 0,JTST
+2021-05-05 11:10:43,321 [14] INFO - [SerialCom] argumentOfworker : JTST-OK
+2021-05-05 11:10:50,958 [1] INFO - [SerialCom] Stop Print Clicked
+2021-05-05 11:10:56,280 [10] INFO - [SerialCom] Send To Printer : 0,JTSP,\r\n
+2021-05-05 11:10:56,300 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:10:56,303 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 4
+2021-05-05 11:11:10,915 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:10,916 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 0
+2021-05-05 11:11:10,917 [1] INFO - [SerialCom] End Batch Clicked
+2021-05-05 11:11:14,115 [1] ERROR- [SerialCom] Printer Status :  - Connection Disconnected
+2021-05-05 11:11:15,495 [1] INFO - [SerialCom] Port : COM6|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-05-05 11:11:17,255 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:17,256 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 8
+2021-05-05 11:11:17,262 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:17,264 [1] INFO - [SerialCom] Db Select product- SELECT id,codekey,name FROM product - 2-TEST1-TEST1,3-TEST2-TEST2
+2021-05-05 11:11:19,233 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:19,234 [1] INFO - [SerialCom] Result insert return id - INSERT INTO batch(created,batchno,productid) VALUES (now(), '1', 0) RETURNING id; - 93
+2021-05-05 11:11:19,235 [1] INFO - [SerialCom] BACTCH ID : 93
+2021-05-05 11:11:19,235 [1] INFO - [SerialCom] productid Selected - 2
+2021-05-05 11:11:19,236 [1] INFO - [SerialCom] ProductCode Selected - TEST1
+2021-05-05 11:11:19,236 [10] DEBUG- [SerialCom] Argumen WOrker --- ECHO
+2021-05-05 11:11:19,240 [10] INFO - [SerialCom] argumentOfworker : ECHO-0,ECHO
+2021-05-05 11:11:19,253 [1] INFO - [SerialCom] Start Batch Clicked
+2021-05-05 11:11:19,257 [19] DEBUG- [SerialCom] Argumen WOrker --- PEEC
+2021-05-05 11:11:19,258 [19] INFO - [SerialCom] Send To Printer : 0,PEEC,1, | Response : 
+2021-05-05 11:11:19,258 [19] INFO - [SerialCom] argumentOfworker : PEEC-
+2021-05-05 11:11:19,263 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:19,266 [1] INFO - [SerialCom] Result Update - With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL and isactive = TRUE Order by id asc LIMIT 4 for update) Update uniquecode u set buffered=now(), batchid = 93 From identifier where identifier.id = u.id - 4
+2021-05-05 11:11:19,266 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:19,268 [1] INFO - [SerialCom] Db Select - SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - 00000000013,00000000014,00000000015,00000000016
+2021-05-05 11:11:19,268 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:19,269 [1] INFO - [SerialCom] Db Select2 - SELECT uniquecode,id,uniquecode2 FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - AAA13,AAA14,AAA15,AAA16
+2021-05-05 11:11:19,270 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:19,271 [1] INFO - [SerialCom] Db Selectid - SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY id asc - 94,95,96,97
+2021-05-05 11:11:19,273 [16] DEBUG- [SerialCom] Argumen WOrker --- MSST
+2021-05-05 11:11:19,277 [16] INFO - [SerialCom] Send To Printer : 0,MSST,6, | Response : 0,PEEC,1,0,FAIL
+2021-05-05 11:11:19,278 [16] INFO - [SerialCom] argumentOfworker : MSST-0,PEEC,1,0,FAIL
+2021-05-05 11:11:20,747 [10] DEBUG- [SerialCom] Argumen WOrker --- SMFM
+2021-05-05 11:11:20,747 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:11:20,748 [10] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:11:20,754 [1] INFO - [SerialCom] Ready Start Clicked
+2021-05-05 11:11:20,757 [10] INFO - [SerialCom] Response SMFM field-0 0
+2021-05-05 11:11:20,757 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:TEST1 00000000013 | Response : 0
+2021-05-05 11:11:20,758 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,02,04,1,300,0000,TEXT,00000000013
+2021-05-05 11:11:20,758 [10] DEBUG- [SerialCom] UTF-8 : 00000000013
+2021-05-05 11:11:20,759 [10] INFO - [SerialCom] Response SMFM field-1 ,FAIL
+
+
+2021-05-05 11:11:20,759 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,02,04,1,300,0000,TEXT,00000000013 | Response : ,FAIL
+2021-05-05 11:11:20,760 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:11:20,760 [10] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:11:20,761 [10] INFO - [SerialCom] Response SMFM field-2 
+2021-05-05 11:11:20,761 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:TEST1 AAA13 | Response : 
+2021-05-05 11:11:20,765 [10] DEBUG- [SerialCom] Original : 0,SMFM,006,04,04,1,900,0000,TEXT,AAA13
+2021-05-05 11:11:20,765 [10] DEBUG- [SerialCom] UTF-8 : AAA13
+2021-05-05 11:11:20,766 [10] INFO - [SerialCom] Response SMFM field-3 0,FAI
+2021-05-05 11:11:20,766 [10] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,04,04,1,900,0000,TEXT,AAA13 | Response : 0,FAI
+2021-05-05 11:11:20,767 [10] DEBUG- [SerialCom] Kirim kodeunik to Printer - SMFM
+2021-05-05 11:11:20,767 [10] INFO - [SerialCom] argumentOfworker : SMFM-0,FAI
+2021-05-05 11:11:20,778 [1] DEBUG- [SerialCom] ke-0:SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:11:20,781 [1] DEBUG- [SerialCom] ke-1:00000000013
+2021-05-05 11:11:20,791 [1] DEBUG- [SerialCom] ke-2:SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:11:20,794 [1] DEBUG- [SerialCom] ke-3:AAA13
+2021-05-05 11:11:20,794 [10] DEBUG- [SerialCom] Argumen WOrker --- JTST
+2021-05-05 11:11:23,800 [10] INFO - [SerialCom] Send To Printer : 0,JTST
+2021-05-05 11:11:23,800 [10] INFO - [SerialCom] argumentOfworker : JTST-OK
+2021-05-05 11:11:27,258 [1] INFO - [SerialCom] Stop Print Clicked
+2021-05-05 11:11:31,860 [10] INFO - [SerialCom] Send To Printer : 0,JTSP,\r\n
+2021-05-05 11:11:31,869 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:31,871 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 4
+2021-05-05 11:11:37,875 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:11:37,877 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 0
+2021-05-05 11:11:37,877 [1] INFO - [SerialCom] End Batch Clicked
+2021-05-05 11:11:58,424 [1] ERROR- [SerialCom] Printer Status :  - Connection Disconnected
+2021-05-05 11:15:24,227 [1] INFO - [SerialCom] Port : COM6|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-05-05 11:15:29,255 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:29,316 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 8
+2021-05-05 11:15:29,333 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:29,347 [1] INFO - [SerialCom] Db Select product- SELECT id,codekey,name FROM product - 2-TEST1-TEST1,3-TEST2-TEST2
+2021-05-05 11:15:33,793 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:33,806 [1] INFO - [SerialCom] Result insert return id - INSERT INTO batch(created,batchno,productid) VALUES (now(), '1', 0) RETURNING id; - 94
+2021-05-05 11:15:33,807 [1] INFO - [SerialCom] BACTCH ID : 94
+2021-05-05 11:15:33,807 [1] INFO - [SerialCom] productid Selected - 2
+2021-05-05 11:15:33,808 [1] INFO - [SerialCom] ProductCode Selected - TEST1
+2021-05-05 11:15:33,852 [1] INFO - [SerialCom] Start Batch Clicked
+2021-05-05 11:15:33,877 [11] DEBUG- [SerialCom] Argumen WOrker --- ECHO
+2021-05-05 11:15:33,901 [11] INFO - [SerialCom] argumentOfworker : ECHO-0,ECHO
+2021-05-05 11:15:33,920 [12] DEBUG- [SerialCom] Argumen WOrker --- PEEC
+2021-05-05 11:15:33,924 [12] INFO - [SerialCom] Send To Printer : 0,PEEC,1, | Response : 0,
+2021-05-05 11:15:33,924 [12] INFO - [SerialCom] argumentOfworker : PEEC-0,
+2021-05-05 11:15:33,928 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:33,940 [1] INFO - [SerialCom] Result Update - With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL and isactive = TRUE Order by id asc LIMIT 4 for update) Update uniquecode u set buffered=now(), batchid = 94 From identifier where identifier.id = u.id - 4
+2021-05-05 11:15:33,943 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:33,944 [1] INFO - [SerialCom] Db Select - SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - 00000000013,00000000014,00000000015,00000000016
+2021-05-05 11:15:33,947 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:33,949 [1] INFO - [SerialCom] Db Select2 - SELECT uniquecode,id,uniquecode2 FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - AAA13,AAA14,AAA15,AAA16
+2021-05-05 11:15:33,951 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:33,952 [1] INFO - [SerialCom] Db Selectid - SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY id asc - 94,95,96,97
+2021-05-05 11:15:33,962 [11] DEBUG- [SerialCom] Argumen WOrker --- MSST
+2021-05-05 11:15:33,965 [11] INFO - [SerialCom] Send To Printer : 0,MSST,6, | Response : PEEC,1,
+2021-05-05 11:15:33,965 [11] INFO - [SerialCom] argumentOfworker : MSST-PEEC,1,
+2021-05-05 11:15:35,340 [11] DEBUG- [SerialCom] Argumen WOrker --- SMFM
+2021-05-05 11:15:35,347 [1] INFO - [SerialCom] Ready Start Clicked
+2021-05-05 11:15:35,349 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:15:35,350 [11] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:15:35,350 [11] INFO - [SerialCom] Response SMFM field-0 0,FAIL
+
+
+2021-05-05 11:15:35,351 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,01,01,1,100,0000,2D_BAR,SMSTO:0812244831555:TEST1 00000000013 | Response : 0,FAIL
+2021-05-05 11:15:35,351 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,02,04,1,300,0000,TEXT,00000000013
+2021-05-05 11:15:35,352 [11] DEBUG- [SerialCom] UTF-8 : 00000000013
+2021-05-05 11:15:35,352 [11] INFO - [SerialCom] Response SMFM field-1 
+2021-05-05 11:15:35,353 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,02,04,1,300,0000,TEXT,00000000013 | Response : 
+2021-05-05 11:15:35,353 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:15:35,353 [11] DEBUG- [SerialCom] UTF-8 : SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:15:35,356 [11] INFO - [SerialCom] Response SMFM field-2 
+2021-05-05 11:15:35,356 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,03,01,1,700,0000,2D_BAR,SMSTO:0812244831555:TEST1 AAA13 | Response : 
+2021-05-05 11:15:35,357 [11] DEBUG- [SerialCom] Original : 0,SMFM,006,04,04,1,900,0000,TEXT,AAA13
+2021-05-05 11:15:35,357 [11] DEBUG- [SerialCom] UTF-8 : AAA13
+2021-05-05 11:15:35,359 [11] INFO - [SerialCom] Response SMFM field-3 
+2021-05-05 11:15:35,360 [11] INFO - [SerialCom] Send To Printer field : 0,SMFM,006,04,04,1,900,0000,TEXT,AAA13 | Response : 
+2021-05-05 11:15:35,360 [11] DEBUG- [SerialCom] Kirim kodeunik to Printer - SMFM
+2021-05-05 11:15:35,361 [11] INFO - [SerialCom] argumentOfworker : SMFM-
+2021-05-05 11:15:35,617 [1] DEBUG- [SerialCom] ke-0:SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:15:35,620 [1] DEBUG- [SerialCom] ke-1:00000000013
+2021-05-05 11:15:35,630 [1] DEBUG- [SerialCom] ke-2:SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:15:35,633 [1] DEBUG- [SerialCom] ke-3:AAA13
+2021-05-05 11:15:35,634 [15] DEBUG- [SerialCom] Argumen WOrker --- JTST
+2021-05-05 11:15:38,644 [15] INFO - [SerialCom] Send To Printer : 0,JTST
+2021-05-05 11:15:38,644 [15] INFO - [SerialCom] argumentOfworker : JTST-OK
+2021-05-05 11:15:41,072 [1] INFO - [SerialCom] Stop Print Clicked
+2021-05-05 11:15:45,686 [11] INFO - [SerialCom] Send To Printer : 0,JTSP,\r\n
+2021-05-05 11:15:45,700 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:15:45,703 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 4
+2021-05-05 11:23:44,677 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:23:44,683 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 0
+2021-05-05 11:23:44,684 [1] INFO - [SerialCom] End Batch Clicked
+2021-05-05 11:23:49,304 [1] ERROR- [SerialCom] Printer Status :  - Connection Disconnected
+2021-05-05 11:24:29,871 [1] ERROR- [SerialCom] SP Open : Access to the port 'COM6' is denied.
+2021-05-05 11:24:32,915 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:32,917 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 8
+2021-05-05 11:24:32,923 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:32,926 [1] INFO - [SerialCom] Db Select product- SELECT id,codekey,name FROM product - 2-TEST1-TEST1,3-TEST2-TEST2
+2021-05-05 11:24:34,364 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:34,370 [1] INFO - [SerialCom] Result insert return id - INSERT INTO batch(created,batchno,productid) VALUES (now(), '1', 0) RETURNING id; - 95
+2021-05-05 11:24:34,371 [1] INFO - [SerialCom] BACTCH ID : 95
+2021-05-05 11:24:34,371 [1] INFO - [SerialCom] productid Selected - 2
+2021-05-05 11:24:34,372 [1] INFO - [SerialCom] ProductCode Selected - TEST1
+2021-05-05 11:24:34,372 [19] DEBUG- [SerialCom] Argumen WOrker --- ECHO
+2021-05-05 11:24:34,402 [19] ERROR- [SerialCom] BackgroundWorker1_DoWork() - ECHO error message : The port is closed.
+2021-05-05 11:24:34,414 [1] INFO - [SerialCom] Start Batch Clicked
+2021-05-05 11:24:34,415 [20] DEBUG- [SerialCom] Argumen WOrker --- PEEC
+2021-05-05 11:24:34,435 [20] ERROR- [SerialCom] BackgroundWorker1_DoWork() - PEEC error message : The port is closed.
+2021-05-05 11:24:34,439 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:34,442 [1] INFO - [SerialCom] Result Update - With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL and isactive = TRUE Order by id asc LIMIT 4 for update) Update uniquecode u set buffered=now(), batchid = 95 From identifier where identifier.id = u.id - 4
+2021-05-05 11:24:34,442 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:34,444 [1] INFO - [SerialCom] Db Select - SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - 00000000013,00000000014,00000000015,00000000016
+2021-05-05 11:24:34,444 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:34,445 [1] INFO - [SerialCom] Db Select2 - SELECT uniquecode,id,uniquecode2 FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - AAA13,AAA14,AAA15,AAA16
+2021-05-05 11:24:34,446 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:34,447 [1] INFO - [SerialCom] Db Selectid - SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY id asc - 94,95,96,97
+2021-05-05 11:24:34,449 [19] DEBUG- [SerialCom] Argumen WOrker --- MSST
+2021-05-05 11:24:34,470 [19] ERROR- [SerialCom] BackgroundWorker1_DoWork() - MSST error message : The port is closed.
+2021-05-05 11:24:35,601 [19] DEBUG- [SerialCom] Argumen WOrker --- SMFM
+2021-05-05 11:24:35,627 [19] ERROR- [SerialCom] BackgroundWorker1_DoWork() - SMFM error message : The port is closed.
+2021-05-05 11:24:35,633 [1] INFO - [SerialCom] Ready Start Clicked
+2021-05-05 11:24:35,645 [1] DEBUG- [SerialCom] ke-0:SMSTO:0812244831555:TEST1 00000000013
+2021-05-05 11:24:35,648 [1] DEBUG- [SerialCom] ke-1:00000000013
+2021-05-05 11:24:35,658 [1] DEBUG- [SerialCom] ke-2:SMSTO:0812244831555:TEST1 AAA13
+2021-05-05 11:24:35,660 [1] DEBUG- [SerialCom] ke-3:AAA13
+2021-05-05 11:24:35,661 [20] DEBUG- [SerialCom] Argumen WOrker --- JTST
+2021-05-05 11:24:35,680 [20] ERROR- [SerialCom] BackgroundWorker1_DoWork() - JTST error message : The port is closed.
+2021-05-05 11:24:35,754 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:35,854 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:35,961 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,072 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,180 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,332 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,453 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,501 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,667 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,719 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,901 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:36,962 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,114 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,185 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,285 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,377 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,490 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,596 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,705 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,827 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:37,929 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,030 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,145 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,251 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,365 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,469 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,590 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,686 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,798 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:38,906 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,015 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,123 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,245 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,353 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,463 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,568 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,678 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,802 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:39,950 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,017 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,168 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,279 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,356 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,503 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,569 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,720 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,808 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,908 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:40,986 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,109 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,205 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,321 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,436 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,549 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,654 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,768 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:41,844 [1] INFO - [SerialCom] Stop Print Clicked
+2021-05-05 11:24:41,904 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,016 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,129 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,236 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,347 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,452 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,568 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,668 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,781 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:42,891 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,001 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,124 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,225 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,317 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,434 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,538 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,655 [1] ERROR- [SerialCom] SP Read (ERROR) : The port is closed.
+2021-05-05 11:24:43,718 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:43,720 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 4
+2021-05-05 11:24:46,847 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-05-05 11:24:46,848 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL, batchid = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 0
+2021-05-05 11:24:46,849 [1] INFO - [SerialCom] End Batch Clicked
+2021-05-05 11:24:49,782 [1] ERROR- [SerialCom] Printer Status :  - Connection Disconnected
+2021-05-05 11:38:18,097 [1] INFO - [SerialCom] setting
+2021-05-05 11:38:25,119 [1] INFO - [SerialCom] FieldSetting
+2021-05-05 11:39:28,125 [1] INFO - [SerialCom] setting

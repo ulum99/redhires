@@ -21,6 +21,7 @@ Public Class FormSetting
         ComboBoxParity.Items.Add(sm.GetSetting("Parity"))
         ComboBoxStopBits.Items.Add(sm.GetSetting("Stopbits"))
         ComboBoxFlowControl.Items.Add(sm.GetSetting("Flowcontrol"))
+        TextBoxPrinterID.Text = sm.GetSetting("PrinterID")
 
         TextBoxHost.Text = sm.GetSetting("host")
         TextBoxDBPort.Text = sm.GetSetting("dbport")
@@ -79,7 +80,12 @@ Public Class FormSetting
             ComboBoxPort.Enabled = False
             ComboBoxStopBits.Enabled = False
 
-            MsgBox("Test Serial Connection successful", MsgBoxStyle.Information, "Information Message")
+            If SP_ECHO(TextBoxPrinterID.Text) <> "FAIL" Then
+                MsgBox("Test Serial Connection SUCCESSFUL", MsgBoxStyle.Information, "Information Message")
+            Else
+                MsgBox("Test Serial Connection UNSUCCESSFUL", MsgBoxStyle.Critical, "Warning Message")
+            End If
+
 
             ComboBoxBaudrate.Enabled = True
             ComboBoxDataBits.Enabled = True
@@ -111,6 +117,7 @@ Public Class FormSetting
             sm.AddSetting("Parity", ComboBoxParity.SelectedItem)
             sm.AddSetting("Stopbits", ComboBoxStopBits.SelectedItem)
             sm.AddSetting("Flowcontrol", ComboBoxFlowControl.SelectedItem)
+            sm.AddSetting("PrinterID", TextBoxPrinterID.Text)
 
             sm.AddSetting("host", TextBoxHost.Text)
             sm.AddSetting("dbport", TextBoxDBPort.Text)
@@ -179,7 +186,20 @@ Public Class FormSetting
         ButtonTestDB.Enabled = True
     End Sub
 
-    Private Sub GroupBoxDBSetting_Enter(sender As Object, e As EventArgs) Handles GroupBoxDBSetting.Enter
+    Private Sub TextBoxPrinterID_TextChanged(sender As Object, e As EventArgs)
+        If System.Text.RegularExpressions.Regex.IsMatch(TextBoxPrinterID.Text, "[  ^ 0-9]") Then
+            TextBoxPrinterID.Text = TextBoxPrinterID.Text
+        Else
+            TextBoxPrinterID.Text = ""
+        End If
+    End Sub
 
+    Private Sub ContentSettingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContentSettingToolStripMenuItem.Click
+        FormConnectionStatusOpen = False
+        AppClose = False
+        Dim openform As New FieldSetting
+        openform.Show()
+        Me.Close()
+        logger.Info("FieldSetting")
     End Sub
 End Class

@@ -1,0 +1,57 @@
+2021-03-29 14:33:50,315 [1] INFO - [SerialCom] setting
+2021-03-29 14:35:47,211 [1] INFO - [SerialCom] Port : COM1|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-03-29 14:39:58,738 [1] INFO - [SerialCom] Port : COM1|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-03-29 14:40:01,144 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 936
+2021-03-29 14:41:23,515 [4] INFO - [SerialCom] Running Check Update
+2021-03-29 14:41:23,546 [4] INFO - [SerialCom] Current Version: 1.9
+2021-03-29 14:41:23,562 [4] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-29 14:41:23,822 [1] INFO - [SerialCom] setting
+2021-03-29 14:41:23,838 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-29 14:41:34,394 [1] INFO - [SerialCom] Port : COM7|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-03-29 14:41:38,307 [5] INFO - [SerialCom] Running Check Update
+2021-03-29 14:41:38,323 [5] INFO - [SerialCom] Current Version: 1.9
+2021-03-29 14:41:38,354 [5] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-29 14:41:38,370 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-29 14:41:40,044 [1] INFO - [SerialCom] Port : COM7|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-03-29 14:41:42,766 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 936
+2021-03-29 14:41:44,145 [5] INFO - [SerialCom] argumentOfworker : ECHO-0,ECHO
+2021-03-29 14:41:44,161 [11] INFO - [SerialCom] Send To Printer : 0,PEEC,1, | Response : 0,
+2021-03-29 14:41:44,177 [11] INFO - [SerialCom] argumentOfworker : PEEC-0,
+2021-03-29 14:41:44,195 [1] INFO - [SerialCom] Result Update - With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL and isactive = TRUE Order by id asc LIMIT 4 for update) Update uniquecode u set buffered=now() From identifier where identifier.id = u.id - 4
+2021-03-29 14:41:44,210 [1] INFO - [SerialCom] Db Select - SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - ABCDE123451363,ABCDE123451364,ABCDE123451365,ABCDE123451366
+2021-03-29 14:41:44,210 [1] INFO - [SerialCom] Db Selectid - SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY id asc - 4556,4557,4558,4559
+2021-03-29 14:41:44,226 [4] INFO - [SerialCom] Send To Printer : 0,MSST,3, | Response : PEEC,1,
+2021-03-29 14:41:44,241 [4] INFO - [SerialCom] argumentOfworker : MSST-PEEC,1,
+2021-03-29 14:41:47,589 [7] INFO - [SerialCom] Send To Printer : 0,SMFM,003,01,01,1,100,0000,2D_BAR,ABCDE123451363 | Response : 0,OK
+2021-03-29 14:41:47,605 [7] INFO - [SerialCom] argumentOfworker : SMFM-0,OK
+2021-03-29 14:41:50,794 [5] INFO - [SerialCom] Send To Printer : 0,JTST
+2021-03-29 14:41:50,809 [5] INFO - [SerialCom] argumentOfworker : JTST-OK
+2021-03-29 14:42:01,787 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 4
+2021-03-29 14:42:03,535 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 0
+2021-03-29 14:42:04,797 [7] INFO - [SerialCom] Send To Printer : 0,JTSP,\r\n
+2021-03-29 14:42:06,652 [1] ERROR- [SerialCom] Printer Status :  - Connection Disconnected
+2021-03-29 14:42:07,652 [1] INFO - [SerialCom] Port : COM7|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-03-29 14:42:08,787 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 936
+2021-03-29 14:42:10,157 [11] INFO - [SerialCom] argumentOfworker : ECHO-FAIL
+2021-03-29 14:42:22,938 [4] INFO - [SerialCom] Running Check Update
+2021-03-29 14:42:22,953 [4] INFO - [SerialCom] Current Version: 1.9
+2021-03-29 14:42:22,969 [4] INFO - [SerialCom] BackgroundWorker CekUpdate Version Update : 1.9
+2021-03-29 14:42:22,985 [1] INFO - [SerialCom] BackgroundWorker CekUpdate RunWorkerCompled : 1.9
+2021-03-29 14:42:33,166 [1] INFO - [SerialCom] Port : COM7|Data Bits : 8|Parity : NONE|StopBits : 1|Flow Control : NONE
+2021-03-29 14:42:35,374 [1] INFO - [SerialCom] Dbs Count :  - Select Count(*) FROM uniquecode WHERE PRINTED IS NULL and buffered IS NULL and isactive = TRUE - 936
+2021-03-29 14:42:47,182 [5] INFO - [SerialCom] argumentOfworker : ECHO-0,ECHO
+2021-03-29 14:42:47,198 [11] INFO - [SerialCom] Send To Printer : 0,PEEC,1, | Response : 0,P
+2021-03-29 14:42:47,213 [11] INFO - [SerialCom] argumentOfworker : PEEC-0,P
+2021-03-29 14:42:47,229 [1] INFO - [SerialCom] Result Update - With identifier AS (Select id from uniquecode where buffered is NULL and printed is NULL and isactive = TRUE Order by id asc LIMIT 4 for update) Update uniquecode u set buffered=now() From identifier where identifier.id = u.id - 4
+2021-03-29 14:42:47,244 [1] INFO - [SerialCom] Db Select - SELECT uniquecode,id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY ID asc - ABCDE123451363,ABCDE123451364,ABCDE123451365,ABCDE123451366
+2021-03-29 14:42:47,244 [1] INFO - [SerialCom] Db Selectid - SELECT id FROM uniquecode WHERE printed IS NULL AND buffered IS NOT NULL and isactive = TRUE ORDER BY id asc - 4556,4557,4558,4559
+2021-03-29 14:42:47,291 [12] INFO - [SerialCom] Send To Printer : 0,MSST,3, | Response : EEC,1,
+2021-03-29 14:42:47,307 [12] INFO - [SerialCom] argumentOfworker : MSST-EEC,1,
+2021-03-29 14:42:49,587 [10] INFO - [SerialCom] Send To Printer : 0,SMFM,003,01,01,1,100,0000,2D_BAR,ABCDE123451363 | Response : 0,OK
+2021-03-29 14:42:49,587 [10] INFO - [SerialCom] argumentOfworker : SMFM-0,OK
+2021-03-29 14:42:52,771 [5] INFO - [SerialCom] Send To Printer : 0,JTST
+2021-03-29 14:42:52,787 [5] INFO - [SerialCom] argumentOfworker : JTST-OK
+2021-03-29 14:43:00,668 [1] INFO - [SerialCom] Result Update - UPDATE uniquecode SET buffered = NULL WHERE buffered IS NOT NULL and printed IS NULL and isactive = TRUE - 4
+2021-03-29 14:43:03,682 [10] INFO - [SerialCom] Send To Printer : 0,JTSP,\r\n
+2021-03-29 21:49:27,435 [1] INFO - [SerialCom] setting
+2021-03-29 21:49:28,908 [1] ERROR- [SerialCom] SP Open : The port 'COM7' does not exist.

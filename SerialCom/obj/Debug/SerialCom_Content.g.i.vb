@@ -11,5 +11,5 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("textfile1.txt")> 
+<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("barcode-24.ico")> 
 

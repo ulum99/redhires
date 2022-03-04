@@ -24,7 +24,6 @@ Partial Class FormAbout
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAbout))
         Me.OKButton = New System.Windows.Forms.Button()
-        Me.TextBoxDescription = New System.Windows.Forms.TextBox()
         Me.LabelCompanyName = New System.Windows.Forms.Label()
         Me.LabelCopyright = New System.Windows.Forms.Label()
         Me.LabelVersion = New System.Windows.Forms.Label()
@@ -44,20 +43,6 @@ Partial Class FormAbout
         Me.OKButton.Size = New System.Drawing.Size(187, 19)
         Me.OKButton.TabIndex = 0
         Me.OKButton.Text = "CHECK  FOR UPDATE"
-        '
-        'TextBoxDescription
-        '
-        Me.TextBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBoxDescription.Location = New System.Drawing.Point(269, 103)
-        Me.TextBoxDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
-        Me.TextBoxDescription.Multiline = True
-        Me.TextBoxDescription.Name = "TextBoxDescription"
-        Me.TextBoxDescription.ReadOnly = True
-        Me.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBoxDescription.Size = New System.Drawing.Size(187, 117)
-        Me.TextBoxDescription.TabIndex = 0
-        Me.TextBoxDescription.TabStop = False
-        Me.TextBoxDescription.Text = resources.GetString("TextBoxDescription.Text")
         '
         'LabelCompanyName
         '
@@ -131,7 +116,6 @@ Partial Class FormAbout
         Me.TableLayoutPanel.Controls.Add(Me.LabelVersion, 1, 1)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCopyright, 1, 2)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCompanyName, 1, 3)
-        Me.TableLayoutPanel.Controls.Add(Me.TextBoxDescription, 1, 4)
         Me.TableLayoutPanel.Controls.Add(Me.OKButton, 1, 5)
         Me.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel.Location = New System.Drawing.Point(9, 9)
@@ -162,17 +146,15 @@ Partial Class FormAbout
         Me.Name = "FormAbout"
         Me.Padding = New System.Windows.Forms.Padding(9)
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About"
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel.ResumeLayout(False)
-        Me.TableLayoutPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents OKButton As Button
-    Friend WithEvents TextBoxDescription As TextBox
     Friend WithEvents LabelCompanyName As Label
     Friend WithEvents LabelCopyright As Label
     Friend WithEvents LabelVersion As Label

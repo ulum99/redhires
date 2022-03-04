@@ -1,0 +1,11 @@
+2021-06-17 16:44:48,756 [1] INFO - [SerialCom] Report
+2021-06-17 16:44:52,859 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-06-17 16:44:53,186 [1] DEBUG- [SerialCom] System.Data.DataSet
+2021-06-17 23:50:11,053 [1] INFO - [SerialCom] Insert Product
+2021-06-17 23:50:21,521 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-06-17 23:50:21,535 [1] INFO - [SerialCom] Result Insert - INSERT INTO product(name,upc,codekey) VALUES ('AAAAA','123344','') - 1
+2021-06-17 23:50:21,546 [1] INFO - [SerialCom] Result Insert Product - 1
+2021-06-17 23:51:36,832 [1] INFO - [SerialCom] Insert Product
+2021-06-17 23:51:45,451 [1] INFO - [SerialCom] Db Connect : successdbname = hirespass=kodokngorek
+2021-06-17 23:51:45,464 [1] INFO - [SerialCom] Result Insert - INSERT INTO product(name,upc,codekey) VALUES ('AAAA',NULL,'12345566') - 1
+2021-06-17 23:51:45,474 [1] INFO - [SerialCom] Result Insert Product - 1
